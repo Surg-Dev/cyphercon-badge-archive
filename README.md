@@ -4,4 +4,4 @@ This repo contains a dump of the badge's FS, and the tools & documentation that 
 - `badge_dump` is a vaguely fresh dump of a badge. The cache and additional user profiles have been cleared, however.
 - `documentation` stores docs on Dogteeth, the custom programming language and other specifications for the badge.
 - `special 16mb micropython` has a micropython firmware file for Pico's with 16mb of eeprom, as the "Pico Boot" was used for the badges.
-- `tools` have custom tools to make logos and adventures, along with the custom font used on the badges.
+- `tools` has custom tools to make logos and adventures, along with the custom font used on the badges.
