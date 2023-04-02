@@ -1,0 +1,29 @@
+
+Intracon 404
+$divider(0)
+Welcome $pget(2)!
+$divider(0)
+
+That page does not exist.
+
+If you feel you have reached
+this page in error:
+
+Upload the desired new
+portal site to your badge
+into the /portal
+directory as:
+
+url#.tcisite
+
+A tci site file is a text
+file which can include
+select Dogteeth scripting
+commands.
+
+$divider(0)
+$button(700)Intracon Home Page
+$button(701)Con Wide Web
+$button(703)Intracon Website Creation
+
+intracon webring: $button($random(0|1|2|3|4|5|6)$random(0|1|2|3|4|5|6|7|8|9)$random(0|1|2|3|4|5|6|7|8|9))next site

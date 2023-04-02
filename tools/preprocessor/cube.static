@@ -1,0 +1,38 @@
+Loading Switchboard.  Press the $button(4)Any Key
+0
+0
+.anykey
+SWITCHBOARD is a game of adventure, danger, and low cunning. No conference badge should be without one! Press the $button(7)Any Key
+
+.missilebay
+You are in a giant room. Once, an Atlas rocket slept here. A shipping container rests in the middle of the room, its door ajar. The container has been converted into a bunkhouse. HSWT780022 3 is stenciled on one of its doors. Inside the shipping container is a bed, neatly made. To the $button(10)east is the Generator Room. To the $button(13)south is the Supply Depot.
+
+.generator
+You are on a walkway overlooking rows of house-sized turbines. It vibrates as water rushes deep under the generator room. Rows of control panels line the walkway. Everything looks well lit. One turbine has stopped. You note that someone has painstakingly removed the turbine from its shaft. A rope looks to be leading down...into the $button(31)water. To the $button(7)west is the Missile Bay. To the $button(16)south is a stairwell.
+
+.supplydepot
+You are in a warehouse. Various supplies are stacked on pallet racks. A crate labeled 'MILSPEC ELECTRONIC RELAYS' has recently been pried open. To the $button(7)north is the Missile Bay.  To the $button(16)east is a stairwell.
+
+.topoflanding
+You are at the top of a flight of metal stairs. To the $button(10)North is the Generator Room. To the $button(13)west is the Supply Depot. Stairs lead $button(19)down from here.
+
+.bottomoflanding
+You are at the bottom of a flight of metal stairs. To the $button(22)North is the Computer Laboratory. To the $button(28)west are the Battery Banks.  Stairs lead $button(16)up from here.
+
+.computerlab
+You are in a computer lab full of racks of equipment. The sound of thousands of electronic relays clicking is overwhelming. On a screen, you see that A "Tim Kerski" is the last to have logged on.  You see his chat to another called Snowlily about  plans to make it across the waterway to what looks like a city. To the $button(25)west is the Hydroponics Laboratory. To the $button(19)south is a stairwell.
+
+.hydroponics
+You are in a long room. Hydroponic lights hang from the ceiling above raised garden beds. Tanks and pumps stand near the center of the room. Hoses carrying fluids fan out from the tanks. Leafy green plants in various stages of growth populate the garden beds. To the $button(22)east is the Computer Laboratory. To the $button(28)south are the Battery Banks.
+
+.batterybanks
+You are standing on a catwalk above glass tanks filled with dangerous looking liquid. Metal rods are suspended in the tanks. Wires run in series and parallel from the rods to a large control panel. The batteries look functional. To the $button(25)north is the Hydroponics Laboratory. To the $button(19)east is a stairwell.
+
+.tailrace
+As you approach the bay with the missing turbine bay, the water below looks fairly calm, though the roar of the water coming through the other turbines sounds awfully close.  The rope is sturdy and leads into the $button(34)water, and the $button(10)generator room is behind you.
+
+.rope
+You climb into the dark bay, the water pushing you gently towards the light at the end of the tunnel.  The water spills out into the open joining up with the body of water.  In the far distance, you can see faint signs of a city. To head back into the missile complex, $button(31)climb the rope or continue downwards towards the $button(37)beach.
+
+.beach
+Signs of lashings and hastily-cut old lumber litter the beach. Perhaps signs of the craft Tim Kerski used to go to the city.  He seems to have used the last of the trees around this area. You can either go back to the $button(34)complex, or walk around the $button(37)beach.

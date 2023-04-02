@@ -1,0 +1,29 @@
+
+Logogen Custom Logo
+$divider(0)
+Welcome $pget(2)!
+
+If you create a cool logo with
+the Logo Generator and save it
+then put your badge into
+Network Mode, your new logo
+will spread to other badges
+and may show up on those
+badge's screens when they go
+into sleep mode.
+
+From there, your logo will
+jump from badge to badge
+appearing all over the
+conference.  Additionally,
+as part of your user file
+it will be associated with
+your badge serial number.
+
+So behave :)
+
+$button(700)Intracon Home Page
+$button(701)Con Wide Web
+$button(703)Intracon Website Creation
+$button(704)VIP Extras
+$button(705)Tymkrscii Draw Custom Logo

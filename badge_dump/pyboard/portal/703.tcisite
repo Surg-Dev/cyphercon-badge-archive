@@ -1,0 +1,29 @@
+
+Intracon Website Creation
+$divider(0)
+Your site can be found $button({player_id})here.
+
+To upload your site onto the
+network: save custom.tcisite
+to the root directory of your
+badge using a tool like Thonny
+
+This should be a simple text
+file.  Each line is one line
+on screen.  The first 30
+characters of each line will
+be displayed when the site is
+loaded.
+
+Then from the System Menu,
+select the option: Uploader
+Then put your badge into
+Network Mode and allow it to
+chat with another badge!
+
+
+
+$button(700)Intracon Home Page
+$button(701)Con Wide Web
+$button(702)Logogen Custom Logo
+$button(705)Tymkrscii Draw Custom Logo

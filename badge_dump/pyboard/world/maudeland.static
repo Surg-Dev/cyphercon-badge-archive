@@ -1,0 +1,1549 @@
+$if($pget(12)|no|$wget(144)|$wget(384))
+0
+0
+.random
+$random(1|2|3|4|5|6)$random(0|1|2|3|4|5|6|7|8|9)$random(0|1|2|3|4|5|6|7|8|9)
+.random110
+$random(1|2|3|4|5|6|7|8|9|10)
+.random115
+$random(1|2|3|4|5|6|7|8|9|10|11|12|13|14|15)
+
+.randomtoken
+0
+.jobtoken
+0
+.jobinventory
+0
+
+.safeinventorytoken
+0
+.safetoken
+0
+.setsafetoken
+0
+
+.jobitem1
+lockpicks
+.jobitem2
+post-it
+.jobitem3
+terminal
+.jobitem4
+acoustic-coupler
+.jobitem5
+room800ticket
+.jobitem6
+marker
+.jobitem7
+bios800peripherals
+.jobitem8
+lineman
+.jobitem9
+air-filters
+.jobitem10
+hoodies
+.jobitem11
+bios800cpu
+.jobitem12
+dixie-cup
+.jobitem13
+walkie-talkie
+.jobitem14
+hoodies
+.jobitem15
+marker
+
+.job1
+Deliver these tools to Room $wget(4)
+.job2
+Deliver this note to Room $wget(4)
+.job3
+Deliver this purchase to Room $wget(4)
+.job4
+Deliver this purchase to Room $wget(4)
+.job5
+Concierge needed this sent to Room $wget(4)
+.job6
+Maude needs this marker - you'll need to deliver it to Entry Point
+.job7
+Go to the Mission and deliver the parcel to Room 800. 
+.job8
+Mission needs us to drop off this handset to $wget(4).
+.job9
+Take these air-filters to Central asap!
+.job10
+The training classes need these hoodies apparently, deliver these to Central
+.job11
+Deliver these tools to Room $wget(4)
+.job12
+Deliver this purchase to Room $wget(4)
+.job13
+Room $wget(4) dropped this on the way to Central
+.job14
+There's a new group of trainees that need hoodies. Take these to Central
+.job15
+Someone's sending Maude a marker bouquet - so be sure to deliver it to Entry Point. Remember it's through the alley. 
+
+
+.nomorejob
+art: takejob.tci Looks like you have another job in progress. The job was to "$wget(.job$wget(13))" You'll want to either $button(402)submit the job or $button(414)cancel the job or $button(387)get on it!
+
+.givejob
+art: takejob.tci $wset(13|$wget(8))Alright, in checking our jobs offerings, ...$wget(.job$wget(13)) Check back in with me when you're done with the job!$wset(15|$wget(.jobitem$wget(13)))$button(384)Job acquired.
+
+.reallycanceljob
+art: takejob.tci $wset(15|0)$wset(13|0)Alright, guess we'll cancel the job. Better luck $button(384)next time {player_name}!
+
+.deliverjob
+$wset(15|complete)Delivery complete! Don't forget to head back to the jobs office to submit your completed job token!
+
+.putintosafe
+art: safe.tci You take $pget(!selfi$wget(20)) and put it into the safe. $pset(!safei$wget(22)|$pget(!selfi$wget(20)))$pset(!$pget(!safei$wget(22))|no)$pset(!selfi$wget(20)|0)$wset(20|0)$wset(22|0) $button(695)Back to the room!
+
+.putintoselfinventory
+art: safe.tci You take $pget(!safei$wget(20)) and put it into your bag. $pset(!selfi$wget(22)|$pget(!safei$wget(20)))$pset(!$pget(!safei$wget(20))|yes)$pset(!safei$wget(20)|0)$wset(20|0)$wset(22|0) $button(695)Back to the room!
+
+.stealing
+$uget($wget(551)|!safei$wget(18))
+
+.takefromnotyoursafe
+art: safe.tci You've quickly taken $wget(106) from the safe before the owner's found out! $pset(!selfi$wget(18)|$wget(106))$pset(!$wget(106)|yes)$wset(18|0) $button(885)Continue.
+
+.marketagree
+$wset(378|$wget(1095))$pset(!selfi$wget(1063)|0)$wset(1063|0) Thank you for your business! $wget(1060)
+
+.dumpsterdive
+art: dumpster.tci $pset(104|yes)You gingerly step in and start rummaging$wset(1179|$wget(118)). You find "$wget(1179)". Do you $button(133)take it, $button(115)keep looking or $button(930)head out?
+
+.dumpsterrandom
+$random(ticket|lockpicks|terminal|cabbage-ends|marker|post-it|fish-heads|bios800cpu|air-filters|hoodie|dixie-cup|coffeecake-crumbs|empty-wrappers|walkie-talkie|acoustic-coupler)
+
+.deltasuccess2
+You're handed the graphics driver. "Well, we best get back to work before the foreman catches us!"$pset(21|yes)$pset(!selfi$wget(6)|bios800graphics) $button(1491)Back to work...
+
+.deltasuccess3
+You're handed the graphics driver. "Well, we best get back to work before the foreman catches us!"$pset(21|yes)$pset(!selfi$wget(6)|bios800graphics)$button(1494)Back to work...
+
+.whichsafespot
+Your safe currently has $wget(1407) - which spot would you like to put the $pget(!selfi$wget(20)) into?: $button(856)Spot 1-5 or $button(858)Spot6-10 or $button(695)nevermind!
+
+.whichselfspot
+Your inventory currently has $wget(1401) - which spot would you like to put the $pget(!safei$wget(20)) into?: $button(856)Spot 1-5 or $button(858)Spot 6-10 or $button(695)nevermind!
+
+.taketrash
+art: dumpster.tci You've taken $wget(1179) from the dumpster!$pset(!selfi$wget(6)|$wget(1179))$pset(!$wget(1179)|yes) $wset(1179|0)$wget(1144)
+
+.purchasesuccess
+We hope you enjoy the $wget(1035)!$pset(!$wget(1035)|yes) $wset(378|$wget(1047))$pset(!selfi$wget(6)|$wget(1035))$wset(1035|0)$wset(1044|0)Come again next time! $button(992)All done!
+
+.atroom
+0
+.atroomname
+0
+
+.orig
+You step off the ferry at Entry Point, ready to explore. One of the locals is on hand to assist new visitors. "Hello, my name is Maude, but you KNOW that because I have on MY name tag." Maude hands you a blank name tag and a marker. Maude leans against the social contract while waiting for you to finish filling out your name ... so she can get her marker back. Hint: See this highlighted $button(147)? It is a button. Turn the knob on the badge until the color of the lights matches the color next to the button, r for red. Press in the knob to click the red button.
+
+.entername
+Unknown to Maude, she and her marker are both imaginary. So, instead of writing on your badge ... you decide to enter your name into your badge using magical color buttons. There are six button colors: $button(150)ed $button(152)ellow $button(154)reen $button(156)eal $button(158)lue and $button(160)iolet. Black is when all the lights are off, white is when all the lights are on. Black and white are not used for buttons. Selecting black will always bring you to the badge main menu. Selecting white will always put your badge into network mode. In network mode, your badge can send and receive updates with other badges.
+
+.red
+You click red $wget(163)
+.yellow
+You click yellow $wget(163)
+.green
+You click green $wget(163)
+.teal
+You click teal $wget(163)
+.blue
+You click blue $wget(163)
+.violet
+You click violet $wget(163)
+
+.postcolor
+and notice that your badge is clever enough to know what you did. You suspect this is only a glimpse of what this device can do. First things first, however: Maude is waiting for you to $button(175)enter your name and she is kinda scary so ... $wset(169|) $wset(172|no)
+
+.newtag
+With a look that could wilt tulips, Maude provides you a replacement. You suspect she may have been planning on scalping any left over paper badges. You start to $button(175)enter your name again, day dreaming about Maude's life of crime. $wset(169|) $wset(172|no)
+
+.namebuffer
+player name goes here
+
+.nameisset
+no
+
+.entertype
+enter a $button(195)number, a lowercase $button(198)letter, an uppercase $button(201)letter, or $button(178)return Maude's marker.
+
+.namefinished
+$if($wget(172)|no|$wget(181)|$wget(192)) Welcome to Cyphercon, don't forget to try the cheese curds! Next!" You either $button(184)stick the name tag to your shirt or ask for a $button(166)new name tag.
+
+.namefinishnestedpipefix
+$wset(169|Unit{player_id})$wget(190)
+
+.savename
+$pset({USER_NAME_INDEX}|$wget(169))You peel the backing away from the name tag and stick it to your shirt. Maude waves you through to the $button(366)subway station platform.
+
+.sidewalk
+The sidewalk ends.
+
+.noface
+Maude seems to have your number, which she scrawls on your badge. You get the feeling you are not the first visitor to annoy her today. "Ok Unit{player_id}, you are all set.
+.ohface
+Maude takes back her marker, glad to see the back of you. "Ok $wget(169), you are all set.
+
+.enternumber
+$button(204) 0 1 2 3 4 or $button(206) 5 6 7 8 9
+
+.enterlcase
+$button(209) a b c d e or $button(211) f g h i j or $button(213) k l m n o or $button(215) p q r s t or $button(217) u v w x y or $button(219) z
+
+.enterucase
+$button(222) A B C D E or $button(224) F G H I J or $button(226) K L M N O or $button(228) P Q R S T or $button(230) U V W X Y or $button(232) Z
+
+.enternumber0
+$button(241)0 $button(243)1 $button(245)2 $button(247)3 $button(249)4 or $button(175)back
+.enternumber1
+$button(251)5 $button(253)6 $button(255)7 $button(257)8 $button(259)9 or $button(175)back
+
+.enterlcase0
+$button(261)a $button(263)b $button(265)c $button(267)d $button(269)e or $button(175)back
+.enterlcase1
+$button(271)f $button(273)g $button(275)h $button(277)i $button(279)j or $button(175)back
+.enterlcase2
+$button(281)k $button(283)l $button(285)m $button(287)n $button(289)o or $button(175)back
+.enterlcase3
+$button(291)p $button(293)q $button(295)r $button(297)s $button(299)t or $button(175)back
+.enterlcase4
+$button(301)u $button(303)v $button(305)w $button(307)x $button(309)y or $button(175)back
+.enterlcase5
+$button(311)z or $button(175)back
+
+.enterucase0
+$button(313)A $button(315)B $button(317)C $button(319)D $button(321)E or $button(175)back
+.enterucase1
+$button(323)F $button(325)G $button(327)H $button(329)I $button(331)J or $button(175)back
+.enterucase2
+$button(333)K $button(335)L $button(337)M $button(339)N $button(341)O or $button(175)back
+.enterucase3
+$button(343)P $button(345)Q $button(347)R $button(349)S $button(351)T or $button(175)back
+.enterucase4
+$button(353)U $button(355)V $button(357)W $button(359)X $button(361)Y or $button(175)back
+.enterucase5
+$button(363)Z or $button(175)back
+
+.enteredextra
+your name tag now reads $wget(169). $button(175)continue
+
+.mediocre
+12
+
+.enter0
+$append(169|0|$wget(238))$wset(172|yes)You draw a 0, $wget(235)
+.enter1
+$append(169|1|$wget(238))$wset(172|yes)You draw a 1, $wget(235)
+.enter2
+$append(169|2|$wget(238))$wset(172|yes)You draw a 2, $wget(235)
+.enter3
+$append(169|3|$wget(238))$wset(172|yes)You draw a 3, $wget(235)
+.enter4
+$append(169|4|$wget(238))$wset(172|yes)You draw a 4, $wget(235)
+.enter5
+$append(169|5|$wget(238))$wset(172|yes)You draw a 5, $wget(235)
+.enter6
+$append(169|6|$wget(238))$wset(172|yes)You draw a 6, $wget(235)
+.enter7
+$append(169|7|$wget(238))$wset(172|yes)You draw a 7, $wget(235)
+.enter8
+$append(169|8|$wget(238))$wset(172|yes)You draw a 8, $wget(235)
+.enter9
+$append(169|9|$wget(238))$wset(172|yes)You draw a 9, $wget(235)
+.entera
+$append(169|a|$wget(238))$wset(172|yes)You draw a a, $wget(235)
+.enterb
+$append(169|b|$wget(238))$wset(172|yes)You draw a b, $wget(235)
+.enterc
+$append(169|c|$wget(238))$wset(172|yes)You draw a c, $wget(235)
+.enterd
+$append(169|d|$wget(238))$wset(172|yes)You draw a d, $wget(235)
+.entere
+$append(169|e|$wget(238))$wset(172|yes)You draw a e, $wget(235)
+.enterf
+$append(169|f|$wget(238))$wset(172|yes)You draw a f, $wget(235)
+.enterg
+$append(169|g|$wget(238))$wset(172|yes)You draw a g, $wget(235)
+.enterh
+$append(169|h|$wget(238))$wset(172|yes)You draw a h, $wget(235)
+.enteri
+$append(169|i|$wget(238))$wset(172|yes)You draw a i, $wget(235)
+.enterj
+$append(169|j|$wget(238))$wset(172|yes)You draw a j, $wget(235)
+.enterk
+$append(169|k|$wget(238))$wset(172|yes)You draw a k, $wget(235)
+.enterl
+$append(169|l|$wget(238))$wset(172|yes)You draw a l, $wget(235)
+.enterm
+$append(169|m|$wget(238))$wset(172|yes)You draw a m, $wget(235)
+.entern
+$append(169|n|$wget(238))$wset(172|yes)You draw a n, $wget(235)
+.entero
+$append(169|o|$wget(238))$wset(172|yes)You draw a o, $wget(235)
+.enterp
+$append(169|p|$wget(238))$wset(172|yes)You draw a p, $wget(235)
+.enterq
+$append(169|q|$wget(238))$wset(172|yes)You draw a q, $wget(235)
+.enterr
+$append(169|r|$wget(238))$wset(172|yes)You draw a r, $wget(235)
+.enters
+$append(169|s|$wget(238))$wset(172|yes)You draw a s, $wget(235)
+.entert
+$append(169|t|$wget(238))$wset(172|yes)You draw a t, $wget(235)
+.enteru
+$append(169|u|$wget(238))$wset(172|yes)You draw a u, $wget(235)
+.enterv
+$append(169|v|$wget(238))$wset(172|yes)You draw a v, $wget(235)
+.enterw
+$append(169|w|$wget(238))$wset(172|yes)You draw a w, $wget(235)
+.enterx
+$append(169|x|$wget(238))$wset(172|yes)You draw a x, $wget(235)
+.entery
+$append(169|y|$wget(238))$wset(172|yes)You draw a y, $wget(235)
+.enterz
+$append(169|z|$wget(238))$wset(172|yes)You draw a z, $wget(235)
+.enterA
+$append(169|A|$wget(238))$wset(172|yes)You draw a A, $wget(235)
+.enterB
+$append(169|B|$wget(238))$wset(172|yes)You draw a B, $wget(235)
+.enterC
+$append(169|C|$wget(238))$wset(172|yes)You draw a C, $wget(235)
+.enterD
+$append(169|D|$wget(238))$wset(172|yes)You draw a D, $wget(235)
+.enterE
+$append(169|E|$wget(238))$wset(172|yes)You draw a E, $wget(235)
+.enterF
+$append(169|F|$wget(238))$wset(172|yes)You draw a F, $wget(235)
+.enterG
+$append(169|G|$wget(238))$wset(172|yes)You draw a G, $wget(235)
+.enterH
+$append(169|H|$wget(238))$wset(172|yes)You draw a H, $wget(235)
+.enterI
+$append(169|I|$wget(238))$wset(172|yes)You draw a I, $wget(235)
+.enterJ
+$append(169|J|$wget(238))$wset(172|yes)You draw a J, $wget(235)
+.enterK
+$append(169|K|$wget(238))$wset(172|yes)You draw a K, $wget(235)
+.enterL
+$append(169|L|$wget(238))$wset(172|yes)You draw a L, $wget(235)
+.enterM
+$append(169|M|$wget(238))$wset(172|yes)You draw a M, $wget(235)
+.enterN
+$append(169|N|$wget(238))$wset(172|yes)You draw a N, $wget(235)
+.enterO
+$append(169|O|$wget(238))$wset(172|yes)You draw a O, $wget(235)
+.enterP
+$append(169|P|$wget(238))$wset(172|yes)You draw a P, $wget(235)
+.enterQ
+$append(169|Q|$wget(238))$wset(172|yes)You draw a Q, $wget(235)
+.enterR
+$append(169|R|$wget(238))$wset(172|yes)You draw a R, $wget(235)
+.enterS
+$append(169|S|$wget(238))$wset(172|yes)You draw a S, $wget(235)
+.enterT
+$append(169|T|$wget(238))$wset(172|yes)You draw a T, $wget(235)
+.enterU
+$append(169|U|$wget(238))$wset(172|yes)You draw a U, $wget(235)
+.enterV
+$append(169|V|$wget(238))$wset(172|yes)You draw a V, $wget(235)
+.enterW
+$append(169|W|$wget(238))$wset(172|yes)You draw a W, $wget(235)
+.enterX
+$append(169|X|$wget(238))$wset(172|yes)You draw a X, $wget(235)
+.enterY
+$append(169|Y|$wget(238))$wset(172|yes)You draw a Y, $wget(235)
+.enterZ
+$append(169|Z|$wget(238))$wset(172|yes)You draw a Z, $wget(235)
+
+.subway
+You open your eyes to find yourself blasted in the face with a warm jet of steam. As the steam clears, you hear the voice of a conductor calling out "Transport Class to Subway Main". A hand pulls you off of the transport platform just as the next jet of steam rolls out. $pset(63|off)You must be the replacement unit Maude over at Central promised me. Nice to meet you {player_name}. Here take this $pset(4|transport)$pset(6|yes)$pget(4) class keycard, it'll let you go anywhere $pget(4) units are allowed. Let's see what kind of experience you've had. Wait, you've only taken {world_clock} steps? Ugh, I'll have to requisition Central again. I don't have the time to train you but why don't you take the subtrain to Lodging, and at least get settled in. Find me at a jobs office when you're ready! $wset(13|0) $button(369)Understand? Or do you need me to $button(371)repeat something?$pset(12|yes)
+
+.introunderstand
+art: subwaymain.tci Great, I like a fast learner {player_name}. Remember to look for me when you've found your way around. $button(373)Got it.
+.introrepeat
+art: subwaymain.tci Okay, using the keycard, you can go anywhere $pget(4) units are allowed. Take the subtrain to Lodging, get settled, then come and find me. Do you $button(369)understand or do you need me to $button(371)repeat?
+.IntroGotIt
+$wset(381|$-(100|{world_clock}))$wset(378|0)$pset(30|no)$wget(384)
+
+.usercypherbucks
+$+($wget(378)|{world_clock})
+.wallet
+0
+
+.usercharge
+100
+
+.subwaymain
+art: subwaymain.tci $pset(80|yes)The cacophony of those going on and off the subtrains echo off thousands of metallic scaffold structures stretched up like ribs along the subway tunnel walls. The whine and strain of cargo loading cranes and chains clatter as you see massive boxes being loaded in and out of the subtrains. A transport conductor approaches...$button(417)Continue
+
+.subwayoffice
+$pset(82|yes)You walk towards an office oddly placed under stacks of boxes and scaffolding. Its walls, like a control room, are covered with rows of indicator lights. Screens showing the status of the different subtrain chains with camera views span across. Behind a stack of files, you see the individual you met in the beginning...Hey there {player_name}! I see that you've taken {world_clock} steps. It's not as much experience as I would have liked you to handle jobs, but I guess I don't have any choice. So would you like me to $button(390)explain jobs, or would you like to $button(399)take a job, $button(402)submit a job, $button(414)cancel a job, or head back to the $button(384)subway?
+
+.explainjob
+Every one in the CypherCon Complex has a job class, your's is currently $pget(4) class. And that means we get certain jobs to help keep things functioning for everyone. Each job you complete gives you 10 cypherbucks. I'll give you a job token when you take on a job, you'll do the job, and then submit that job token back to me to get credit. If you need to cancel a job, just let me know so I can put someone else on the job. For example, $wget(393) over there would be ready to pick it up. $button(387)Understand? Or do you need me to $button(390)repeat myself?
+
+.includejob
+$wset(11|$wget(4))$wset(139|$uget($wget(11)|82))$wset(141|$uget($wget(11)|{USER_NAME_INDEX}))$wget(396)
+
+.jobofficeinclude
+$if($wget(139)|yes|$wget(141)|Unit $wget(4))
+
+.takejob
+$if($wget(13)|0|$wget(91)|$wget(88)).
+
+.submitjob
+art: submitjob.tci Ready to submit the job? Let me process $wget(393)'s job submission really quickly... Alright so you had Job $wget(13). $if($wget(15)|complete|$wget(405)|$wget(411))
+
+.submitjobgood
+art: submitjob.tci Great job, here's the 10 $wset(378|$wget(408))I owe you. $wset(15|0)$wset(13|0)Let me know when you're ready to $button(399)take another job or $button(384)take a day off, you deserve it!
+
+.jobpay
+$+($wget(378)|10)
+
+.submitjobbad
+art: submitjob.tci Looks like the package is still in your bag?? Go back out there and $button(384)finish it up unless you're here to $button(414)cancel the job.
+
+.canceljob
+art: submitjob.tci Too difficult? Do you want to $button(387)change your mind about cancelling or $button(94)cancel after all?
+
+.transportplatform
+art: transportplatform.tci You look to have $pget(4) access. Step up to the transport platform and choose your destination. Hold up your keycard and select one of the following: $button(384)Subway Main - $button(387)Subway Office - $button(420)Lodging - $button(1299)Central - $button(930)Market Square - $button(1182)Mission Collective
+
+.lobby
+art: lobby.tci $pset(84|yes)$wset(548|)You step into a grandiose lobby, its ceilings wrapped in sentries of dark oak trim. The concierge greets you. $wget(423). Welcome to Lodging Cluster C unit {player_name}! I see you are staying in Room {player_id}. The $button(417)transport platform is back the way you came, the $button(429)elevators are just down the hall, did you want to $button(912)look around?
+
+.includelobby
+$wset(11|$wget(4))$wset(139|$uget($wget(11)|84))$wset(141|$uget($wget(11)|{USER_NAME_INDEX}))$wget(426)
+
+.lobbyinclude
+$if($wget(139)|yes|$wget(141) waves at you|Unit $wget(4) looks to be on their way out)
+
+.elevatorprepre
+$pset(86|yes)$wset(548|)$if($pget(57)|yes|$wget(578)|$wget(432))
+
+.elevatorpre2
+$if($pget(63)|on|$wget(438)|$wget(435))
+
+.elevator
+art: elevator.tci The operator is rewiring the panel. You give a look to $wget(441). There's a notice to the side stating "Due to hacking incident OT-15, all digits above 5 do not function." $random($wget(447)|$wget(449)|$wget(451)) $random($wget(458)|$wget(460)|$wget(462))
+
+.elevatorfixed
+art: elevator.tci A sharply dressed elevator operator greets you. You give a nod to $wget(441). $random($wget(449)|$wget(453)|$wget(455)) $wget($random(458|460|462))
+
+.includeelevator
+$wset(11|$wget(4))$wset(139|$uget($wget(11)|86))$wset(141|$uget($wget(11)|{USER_NAME_INDEX}))$wget(444)
+
+.elevinclude
+$if($wget(139)|yes|$wget(141) who returns your look|Unit $wget(4) who shrugs)
+
+.elevatorop1
+We'll get these digits working in no time! Looks like $random(it's a bit humid for the joints|a fine day in the making|we'll be able to pack our solar chargers|a rust storm's|the ventilation system's fixed) out there!
+.elevatorop2
+Did you hear about Unit $wget(4)? Oh I'd better not say.
+.elevatorop3
+Oops, got a little shock there. Those hackers really did a number on us!
+.elevatorop4
+Glad the elevator's working again! Looks like $random(it's a bit humid for the joints|a fine day in the making|we'll be able to pack our solar chargers|a rust storm's|the ventilation system's fixed) out there!
+.elevatorop5
+It'll take everyone's effort to keep those pesky hackers from making us calculate in senary again!
+
+.elevatorbasic1
+Done in the $button(420)lobby or ready to go to $button(465)your room? Or perhaps, let's go $button(468)exploring? I could $button(481)mash some buttons!
+.elevatorbasic2
+All done in the $button(420)lobby? Would you like to go to $button(465)your room or $button(468)elsewhere? I know of a $button(481)place!
+.elevatorbasic3
+Ready to leave the $button(420)lobby? Where to {player_name}? $button(465)Your room, off to the $button(468)unknown, or a $button(481)surprise?
+
+.userroom
+art: elevarrive.tci $pset(88|yes)$wset(551|{player_id})$wget(656)
+
+.explore
+$if($pget(63)|on|$wget(484)|$wget(471))
+
+.elevsenary
+$wget($random(474|476|478)), $wget(530)
+
+.explore1
+art: elevator.tci You look clever {player_name}, and since we only have 0-5 working, how about telling me what floor you need in senary? I'll take 4 digits
+.explore2
+art: elevator.tci Humor me. Using only 0-5, give me 4 digits in senary and tell me what floor you'd like to go to
+.explore3
+art: elevator.tci Choose the floor you'd like to explore using 0-5 for 4 digits in senary
+
+.OpChoice
+art: elevarrive.tci $wset(551|$wget(4))$wget(656)
+
+.elevbase10
+$wget($random(487|489|491)), $wget(527)
+
+.explorefix1
+art: elevator.tci Choose the floor you'd like to explore using three digits, each between 0 and 9. Or $button(420)back to the lobby!
+.explorefix2
+art: elevator.tci Where to next? Using three digits, each between 0 and 9, the world's your oyster! Or $button(420)back to the lobby!
+.explorefix3
+art: elevator.tci Three numbers, any three! Or $button(420)back to the lobby!
+
+.floorfinished
+$>($wget(548)|701)
+
+.floorfinished2
+$if($wget(494)|0|$wget(500)|$wget(524))
+
+.floorequation
+$wget(509)$wset(548|701)
+
+.floorfinished3
+$b6tob10($wget(548))
+
+.floorfinished4
+art: elevarrive.tci $wset(548|$wget(503))$wget(497)
+
+.floorpenthouse
+$pset(92|yes)"Oooh yes, the penthouse!" You see an empty pool. Beside it are instructions and a dixie cup dispenser. The instructions state, "If we can fill this pool up, we can have a pool party and you know who will show up!" $if($pget(30)|no|$button(512)Get a dixie cup to help the cause or $button(420)return to the lobby cuz this is ridiculous.|$button(515)Fill that pool up or $button(420)return to the lobby)
+
+.getdixie
+art: penthouse.tci $pset(30|empty)You get a dixie cup. No telling how many fillups this'll require, but hey, pool party at the end! $button(509) Woo!
+
+.fillpoolcheck
+art: penthouse.tci $if($pget(30)|full|$wget(518)|$wget(521))
+
+.fillpool
+art: penthouse.tci You empty your dixie cup into the pool. 1 down, many to go!$pset(30|empty) $button(420)Let's go again!
+
+.getwater
+art: penthouse.tci You don't have any water in the cup! Go find a water source!$pset(30|empty) $button(509)Continue.
+
+.floorset
+art: elevarrive.tci "Wonderful choice, here we go!" $wset(551|$wget(548))$wget(656)
+
+.elevselectfloorb10
+Choose a number $button(539) 0 1 2 3 4 or $button(542) 5 6 7 8 9 or $button(497)Let's go explore!
+
+.elevselectfloorsen
+Choose a number $button(533) 0 1 2 $button(536) 3 4 5 or $button(506)Let's go explore!
+
+.number0-2
+art: elevator.tci $button(557)0 $button(559)1 $button(561)2 or $button(530)back
+
+.number3-5
+art: elevator.tci $button(563)3 $button(565)4 $button(567)5 or $button(530)back
+
+.number0-4
+art: elevator.tci $button(557)0 $button(559)1 $button(561)2 $button(563)3 $button(565)4 or $button(527)back
+
+.number5-9
+art: elevator.tci $button(567)5 $button(569)6 $button(571)7 $button(573)8 $button(575)9 or $button(527)back
+
+.maxfloorlen
+$if($pget(63)|on|3|4)
+
+.floorbuffer
+0
+
+.floor
+0000
+
+.getbuffer
+the floor number now reads $wget(548), $if($pget(63)|on|$wget(527)|$wget(530))
+
+.#0
+$append(548|0|$wget(545)) You chose 0, $wget(554)
+.#1
+$append(548|1|$wget(545)) You chose 1, $wget(554)
+.#2
+$append(548|2|$wget(545)) You chose 2, $wget(554)
+.#3
+$append(548|3|$wget(545)) You chose 3, $wget(554)
+.#4
+$append(548|4|$wget(545)) You chose 4, $wget(554)
+.#5
+$append(548|5|$wget(545)) You chose 5, $wget(554)
+.#6
+$append(548|6|$wget(545)) You chose 6, $wget(554)
+.#7
+$append(548|7|$wget(545)) You chose 7, $wget(554)
+.#8
+$append(548|8|$wget(545)) You chose 8, $wget(554)
+.#9
+$append(548|9|$wget(545)) You chose 9, $wget(554)
+
+.room800check
+art: elevator.tci The elevator operator approaches you "I see that you have a tourism ticket to see our Room 800 archive - would you like to go there now, or did you want to go elsewhere?" $button(420)Lobby $button(465)Your Room $button(468)Exploratory Mission $button(481)Operator Surprise $button(581)Room 800 please!
+
+.room800
+art: elevator.tci $pset(90|yes)Thank you for the ticket! $pset(57|no)I always enjoy taking folks to this room! It used to be the Librarian's when she first arrived and way before the Mission Collective was even built into existence! Please watch your step as you $button(584)go in!
+
+.room800enter
+art: room800.tci As you enter the room, you see $wget(587) talking to a librarian. There are electronics strewn everywhere. You see a Mission Librarian approach you. "Welcome to the Room 800 archive!" Are you here to $button(596)deliver something? Or here to see the $button(593)archives? Or did you want to go back down to $button(420)the Lobby?
+
+.includeroom800
+$wset(11|$wget(4))$wset(139|$uget($wget(11)|90))$wset(141|$uget($wget(11)|{USER_NAME_INDEX}))$wget(590)
+
+.room800include
+$if($wget(139)|yes|$wget(141)|Unit $wget(4))
+
+.room800entertour
+$if($pget(14)|yes|$wget(605)|$wget(602))
+
+.room800deliver
+art: room800.tci $if($wget(15)|bios800peripherals|$wget(599)|Looks like you don't have the computer parts we need?) $button(584)Thanks for stopping by!
+
+.room800deliver1
+art: room800.tci You drop off the package$wset(15|complete).
+
+.room800notvolunteer
+art: room800.tci You see what looks like a chaotic electronics lab with parts and bits and bobs everywhere. A single empty spot on the desk remains. Wonder why they kept that deliberately clean? $button(584)Tour's over!
+
+.room800volunteercheck
+$if($pget(25)|yes|$wget(623)|$wget(608))
+
+.room800volunteer
+art: room800archive.tci Oh you're a volunteer! $if($pget(25)|yes|Interested in using the $button(623)network? Or heading back down to the $button(420)Lobby?|$wget(611))
+
+.room800compcheck
+$if($pget(17)|yes|$wget(613)|It's not ready to be assembled, you don't have the ram chips. $button(584)Better luck next time.)
+.bios800cpucheck
+$if($pget(19)|yes|$wget(615)|It's not ready to be assembled, you don't have the CPU. $button(584)Better luck next time.)
+.bios800graphicscheck
+$if($pget(21)|yes|$wget(617)|It's not ready to be assembled, you don't have the graphics card $button(584)Better luck next time.)
+.bios800peripheralscheck
+$if($pget(23)|yes|$wget(620)|It's not ready to be assembled, you don't have the computer peripherals $button(584)Better luck next time.)
+
+.assemble800comp
+art: room800archive.tci The Librarian excitedly gets all of the parts that you've scavenged and starts installing them together. $pset(25|yes)"Ready for this?"...she powers on the computer, furiously typing prompts into the terminal. You hear the whine and spinup of the fans in the room as modules and components are initialized. Interested in $button(623)accessing the network, or $button(420)back to the lobby for now.
+
+.usecomputer
+art: room800archive.tci You stand in front of a vintage computer, disk whirring and fans spinning. [Local Access Granted] appears on the screen along with the following options: $button(626)CypherOS Network - $button(647)Self Viewer - $button(650)Floppy Analyzer - $button(653)KeyCard analyzer - $button(608)Entryway
+
+.networkest
+art: cypheros.tci The revived network offers additional functionality beyond Mission Collective Library capabilities: $button(629)Job to Self Inventory Shift - $button(638)Delta Chat - back to the $button(623)main screen.
+
+.inventoryshiftcheck
+art: room800archive.tci $if($wget(15)|0|No inventory to move!$button(623)Back to the network.|$wget(632))
+
+.inventoryshiftcheck2a
+art: room800archive.tci $if($wget(15)|complete|Submit your job to the jobs office!$button(626)Back to the network.|$wget(635))
+
+.inventoryshiftdone
+art: room800archive.tci Inventory shift complete. $pset(119|$wget(15))$wset(15|complete). Report to the Subway Office and submit the job for job $wget(13). $button(626)Back to the network.
+
+.deltaislandchat
+You sign onto the delta island chatroom, and a conversation is already ongoing. "Okay, I know the world LOOKS 2D, but it's got to be 3D. I mean, if we're all getting on a train to Central, it's not like we're laying on top of each other right?"..."Guys, it's Tim Kerski again. Tim, maybe it's just something special about this world. I wouldn't worry about it." $button(641)Continue reading
+
+.dic2
+"One more thing, why is it that a single switch has so much power? We've been dealing with these hackers for what feels like forever, but a single switch somehow exposes an entire street AND fixes an elevator? I mean, that's crazy right?" ... "Another Kerski-ism. Maybe all of the games you're playing are getting to you..." $button(644)Continue reading
+
+.dic3
+"Have you ever noticed that there's only two colors, but we have words for way more in this world? What's up with that?" ... "Tim, only you would notice this. Hardly anyone talks about colors, I'd say for obvious reasons" ... "You can't tell me you haven't heard. Like, what's red, yellow, green, teal, blue, and violet?" ... "You can ask Maude, she knows."...$button(626)Disconnect from the chat. 
+
+.selffile800
+art: cypheros.tci The viewer displays your user file. User Name: {player_name} - Player ID: {player_id} - Player UserClass: $pget(4) - Room Terminal Status: $pget(28) - BIOS Terminal Status: $pget(25) - Inventory: $wget(1401) $button(623)Self Review Complete.
+
+.userfileviewer800
+art: cypheros.tci The viewer displays the file on the floppy. User Name: $uget($pget(34)|{USER_NAME_INDEX}) - Player ID: $pget(34) - Player UserClass: $uget($pget(34)|4) - Room Terminal Status: $uget($pget(34)|28) - BIOS Terminal Status: $uget($pget(34)|25) - Inventory: $wget(1404) $button(623)Review Complete
+
+.keycardviewer800
+art: cypheros.tci User Name: $uget($pget(38)|{USER_NAME_INDEX}) - Player ID: $pget(38) - Transport Class: $uget($pget(38)|6) - Hacker Class: $uget($pget(38)|8) -  Volunteer Class: $uget($pget(38)|14) - Architect Class: $uget($pget(38)|12) - Administrator Class: $uget($pget(38)|10) $button(623)Review Complete
+
+.elevarrived
+As the open air elevator slows down at your destination, you gaze out at the birdseye view of the curved cityscape of pipes, wires, and static lights.$wset(548|) $wget($random(658|660|662))
+.arrive1
+We have arrived at Room $wget(551). $wget(665)! Requisition us if you'd like to head back to the $button(420)lobby, go $button(468)exploring, otherwise, please enjoy your $button(674)stay!
+.arrive2
+Please watch your step when entering Room $wget(551). $wget(665)! Use this panel to either $button(420)return to the Lobby or $button(468)go exploring. Enjoy your $button(674)stay!
+.arrive3
+Welcome to Room $wget(551)! $wget(665)! $wget(665)! You may either return to the $button(420)Lobby or go $button(468)exploring. Otherwise, please enjoy your $button(674)stay!
+
+.floorcompare
+$if({player_id}|$wget(551)|$wget(668)|$wget(671))
+
+.userfloor
+$pset(88|yes)$random(It will be useful to recharge here|You can store your valuables here|You can get a lot of information about the world from your room)
+
+.notuserfloor
+$pset(88|yes)$random(There may be some explaining to do if the current tenant finds you here|Not sure if you meant to choose this room|Oh this is different from your place, isn't it)
+
+.roomfoyer
+art: userentry.tci Room $wget(551) is spacious, surprisingly quiet, and full of synthetic light. You have $wget(381) charge left. Would you like to $button(677)recharge, $button(695)look around, or return to the $button(420)lobby?
+
+.recharge
+art: userentry.tci The charging station pulses with a calming light. $wset(381|100) You step on it and settle in for a refreshing charge. $button(674)Complete Cycle
+
+.hypercube
+$pset(98|yes)You knew better than to touch this and feel a shift in the universe... $button(683)Continue
+
+.hypercube2
+art: hypercube.tci Your eyes flutter open and you hear a flurry of activity. You hear a panicked electronic voice, "Doctor, the patient is waking up!" $random(... "Complete lack of professionalism, that's what this is!" ... "No, turn that knob!..." ... "Increase the anesthesia!..."|"It's not that leg, it's the other one!" ... "I thought it was supposed to be an arm? ... Did no one check?..."|"I thought this one was inert, who switched the piles again?!" ... "I swear I was told to pick a live one!...") ... You drift off again into a $button(686)deep sleep.
+
+.hypercube3
+$wset(381|100)You step off the charging platform. Was it all just a dream? $button(674)Complete Cycle 
+
+.includehypercube
+$wset(11|$wget(4))$wset(139|$uget($wget(11)|98)) $wset(141|$uget($wget(11)|{USER_NAME_INDEX}))$wget(692)
+
+.hypercubeinclude
+$if($wget(139)|yes|$wget(141) also could not resist|Unit $wget(4) reached out to the light)
+
+.roomlook
+$if({player_id}|$wget(551)|$wget(698)|$wget(885))
+
+.userfloorlook
+$if($pget(36)|yes|$wget(704)|$wget(701))
+
+.userflooryeskeyfloppycheck
+$if($pget(32)|yes|$wget(722)|$wget(719))
+
+.userfloornokeyfloppycheck
+$if($pget(32)|yes|$wget(728)|$wget(725))
+
+.userfloppydisk
+art: lookaround.tci You see a floppy disk on the desk. Do you $button(710)stow the floppy disk in your jacket or $button(695)leave it for another day?
+
+.takefloppydisk
+$pset(32|yes)$pset(34|$wget(551))$wget(695)
+
+.userkeycardview
+art: lookaround.tci You see a keycard on the desk. Do you $button(716)stow the keycard in your jacket or $button(695)leave it for another day?
+
+.takekeycard
+$pset(36|yes)$pset(38|$wget(551))$wget(695)
+
+.userflooryeskeyyesfloppy
+art: userroom.tci Walking past the entryway, you see a $button(731)desk, $button(812)safe, $button(707)floppy disk, and a $button(713)keycard. The $button(674)foyer is behind you.
+
+.userflooryeskeynofloppy
+art: userroom.tci Walking past the entryway, you see a $button(731)desk, $button(812)safe, and a $button(713)keycard. The $button(674)foyer is behind you.
+
+.userfloornokeyyesfloppy
+art: userroom.tci Walking past the entryway, you see a $button(731)desk, $button(812)safe, and a $button(707)floppy disk. The $button(674)foyer is behind you.
+
+.userfloornokeynofloppy
+art: userroom.tci Walking past the entryway, you see a $button(731)desk and $button(812)safe. The $button(674)foyer is behind you.
+
+.desk
+art: desk.tci You see a desk $if($pget(28)|yes|$wget(737)|$wget(734))
+
+.computernotpresent
+and a phone. Do you $button(740)pick up the phone, $button(761)work on a project, or $button(695)look around the room again?
+
+.computerpresent
+and a phone with a computer by it. Do you $button(740)pick up the phone, $button(761)use the computer, or $button(695)look around the room again?
+
+.pickupphone
+art: phone.tci You pick up the phone, and the concierge picks up. "Hello {player_name}, how may we help you? Would you like to make a call to $button(743)EntryPoint, $button(755)The Mission, or $button(752)Central" or $button(731)hang up.
+
+.phoneentrypoint
+art: phone.tci *click* *dial* "You've reached Entry Point, this is Maude". Do you ask Maude about the latest $button(746)gossip or about $button(758)entry point policy? $button(731)Hang up.
+
+.maudegossip
+art: phone.tci Hi Maude, what's the latest out there?...you hear the cap of a marker click onto the marker...Oh, well if it isn't {player_name}, I remember when you checked in at Entry Point. $wget(749)
+
+.mauderandom
+art: phone.tci $random(I don't know if you heard, but when you checked in, there weren't only transport class users, there were even administrator class! |Word on the street is that dumpster diving will give you enough parts to create your own portal into the network.|You didn't hear this from me, but if you get a job, there's a shop in Market Square where you can change things. Ya know...things!|Between you and me, that shopkeeper is definitely reselling stuff from the dumpster.|It's ridiculous, the transporters tell me that when they cancel a job, the jobs office just dumps it into the dumpster! They don't take the inventory back! Something about it being trashed from travel. What a waste.|Rumor is, touching the hypercube, if you can find it, gives you all of the access that you need. But I wouldn't.|You know how the Librarian's all holed up? She's workin' on something big, but all I ever see are her volunteers running around.|I've only ever heard of a handful of units return once they make the mistake of taking the air balloon. But who knows if that's true.) $button(749)More gossip or $button(731)hang up?
+
+.phonecentral
+art: phone.tci Thank you for your call to Central. Your call is important to us. Please press $button(731)1 if you would like Central to expand access into the underground or $button(731)2 if this is not important to you. $button(731)Thank you!
+
+.phonemission
+art: phone.tci Hello, thank you for your call to the Mission Collective. You have no outstanding books to return, and the hours are 24/7. Please join our volunteer ranks and enjoy special discounts at Market Square for volunteers! $button(731)Thank you!
+
+.entrypointpolicy
+Just curious about the policies Maude and how folks make it here, and no one knows them better than you!..."Well that is true *sniffle*, I'm glad SOMEONE recognizes that. Well, it's pretty simple, we've figured out how to transmit physical data through my MEP module - Maude's entry point module. When we requisition extra units, they're plugged into a visa transport node and sent here for processing!" $button(746)But you're really here to talk about what the latest on the street is right? Or did you need to $button(731)go?
+
+.snowlily
+$if($pget(28)|yes|$wget(776)|$wget(764))
+
+.snowlilyno
+$if($pget(43)|yes|The green phosphor terminal is present.|You do not have the terminal.) $if($pget(45)|yes|The acoustic coupler is present.|You do not have the acoustic coupler.) Are you looking to $button(767)assemble what you have or $button(731)not yet?
+
+.terminalcheck
+$if($pget(43)|yes|$wget(770)|It's not ready to be assembled, you don't have the terminal. $button(731)Better luck next time.)
+
+.acousticcouplercheck
+$if($pget(45)|yes|$wget(773)|It's not ready to be assembled, you don't have the acoustic coupler. $button(731)Better luck next time.)
+
+.assemble
+art: snowlily.tci You connect the terminal's serial cable to the acoustic coupler. $pset(28|yes)$pset(43|no)$pset(45|no)Do you $button(776)power on the computer or $button(731)look around again?
+
+.poweron
+art: snowlily.tci You power on the computer. A faint whine and *woomph* sound reveals a blinking cursor. $if($pget(47)|yes|The only number you had was on the wadded post-it note you got from the Mission Collective when you became a volunteer. $button(779)555-810-5800 or $button(731)shut down the computer?|You don't know the number...$button(731)that post-it must be around here somewhere...)
+
+.dial
+art: snowlily.tci Holding the handset up against your ear as you dial, the call connects and the the other end and makes a carrier tone signal. You put the handset into the acoustic coupler and you quietly hear as the acoustic coupler hears the carrier tone and it starts doing the muffled handshake to do the connection. $button(782)You are connected.
+
+.connectedpre
+$if($pget(55)|no|$wget(797)|$wget(785))
+
+.connectedmep
+art: snowlily.tci Your screen flickers to life as it connects and within a few seconds, you see someone typing "... hello? ... Is someone out there? ... " $button(788)I'm here...$button(731)shut the computer down.
+
+.respondmep
+art: snowlily.tci Hi! A/S/L? I'm on the island getting some extra money so I can buy Maude a bouquet of markers!....$button(791)Oh, so is that why she's been in such a good mood lately?
+
+.respondmep2
+art: snowlily.tci Tim Kerski stopped by the other day too. He was going on about how he didn't understand why people would even care to make cypherbucks, and how there were only a few items people could get anyway. $button(794)But didn't it take someone a lot of cypherbucks to install the MEP module which he relies on to travel?
+
+.respondmep3
+art: snowlily.tci That's what I'm saying! I bet he wouldn't find it useless to make Maude a bouquet of markers! N-E-WAYZ I should go and make some more units. ttyl! $button(731)See ya.
+
+.connected
+art: snowlily.tci Your screen flickers to life as it connects and within a few seconds, you see someone typing "...hello? ...Is someone out there?...anyone?..." $button(800)I'm here.....$button(731)shut the computer down.
+
+.respond
+art: snowlily.tci You type "I'm here"... $button(803)Wait for a response
+
+.responda
+art: snowlily.tci After a few prolonged seconds, you see text appear. "Oh thank Maude. I've been trying to get back to the city because I made the mistake of taking the air balloon without something called a MEP module." $button(806)"What air balloon? Where are you?" or $button(731)"This is a little creepy..."
+
+.respond2
+art: snowlily.tci "I have no idea where I am but I'm trapped. And everyone keeps talking about a visa transport point and MEP module and I'm at a darn visa transport node but nothing's happening. Please, I need help getting out of here... Oh I have to run!" $button(809)Hey don't go yet!....$button(731)What's a visa transport node?
+
+.respond3
+art: snowlily.tci You see no response, just the cursor blinking. $button(731)What's a visa transport node?
+
+.usersafe
+art: safe.tci You open up your own safe. This is a better long term storage solution. You see the following in the safe: $wget(1407)Would you like to $button(818)put something into the safe or $button(821)take something out? Or $button(695)just looking?
+
+.safestate
+store
+
+.putinsafe
+art: safe.tci $wset(815|store)You have the following on your person: $wget(1401) What do you want to store? $button(824)Check items 1-5 - $button(827)Check items 6-10 or $button(695)never mind!
+
+.takeoutofsafe
+art: safe.tci $wset(815|take)You take a look at your safe. You have $wget(1407). Which do you want to take out? $button(824)Check 1-5 $button(827)Check 6-10 or $button(695)never mind.
+
+.homeinventory1-5
+$if($wget(815)|store|Which item would you like to store in the safe|Which item would you like to take out of the safe?) $button(833)$if($wget(815)|store|$pget(119)|$pget(140)) $button(835)$if($wget(815)|store|$pget(121)|$pget(142)) $button(837)$if($wget(815)|store|$pget(123)|$pget(144)) $button(839)$if($wget(815)|store|$pget(125)|$pget(146)) $button(841)$if($wget(815)|store|$pget(127)|$pget(148)) or $button(695)never mind!
+
+.homeinventory6-10
+$button(843)$if($wget(815)|store|$pget(129)|$pget(150)) $button(845)$if($wget(815)|store|$pget(131)|$pget(152)) $button(847)$if($wget(815)|store|$pget(133)|$pget(154)) $button(849)$if($wget(815)|store|$pget(135)|$pget(156)) $button(851)$if($wget(815)|store|$pget(137)|$pget(158)) or $button(695)never mind!
+
+.safebufferb
+$if($wget(815)|store|$wget(127)|$wget(130))
+
+.safebuffer1
+$wset(20|1)$wget(830)
+.safebuffer2
+$wset(20|2)$wget(830)
+.safebuffer3
+$wset(20|3)$wget(830)
+.safebuffer4
+$wset(20|4)$wget(830)
+.safebuffer5
+$wset(20|5)$wget(830)
+.safebuffer6
+$wset(20|6)$wget(830)
+.safebuffer7
+$wset(20|7)$wget(830)
+.safebuffer8
+$wset(20|8)$wget(830)
+.safebuffer9
+$wset(20|9)$wget(830)
+.safebuffer10
+$wset(20|10)$wget(830)
+
+.selfinventorybuffer
+
+.setspot1-5
+$button(864)Spot 1 $button(866)Spot 2 $button(868)Spot 3 $button(870)Spot 4 $button(872)Spot 5 or $button(695)never mind!
+.setspot6-10
+$button(874)Spot 6 $button(876)Spot 7 $button(878)Spot 8 $button(880)Spot 9 $button(882)Spot 10 or $button(695)never mind!
+
+.setsafeb
+$if($wget(815)|store|$wget(100)|$wget(103))
+
+.setsafe1
+$wset(22|1)$wget(861)
+.setsafe2
+$wset(22|2)$wget(861)
+.setsafe3
+$wset(22|3)$wget(861)
+.setsafe4
+$wset(22|4)$wget(861)
+.setsafe5
+$wset(22|5)$wget(861)
+.setsafe6
+$wset(22|6)$wget(861)
+.setsafe7
+$wset(22|7)$wget(861)
+.setsafe8
+$wset(22|8)$wget(861)
+.setsafe9
+$wset(22|9)$wget(861)
+.setsafe10
+$wset(22|10)$wget(861)
+
+.notuserfloorlook
+art: lookaround.tci Walking past the entryway, you see a $button(888)safe, $button(894)floppy disk, and a $button(900)keycard. $uget($wget(551)|{USER_NAME_INDEX}) doesn't look to be around. Are you here to $button(906)deliver something? Or did you need to head back to the $button(420)lobby?
+
+.notusersafe
+$if($pget(49)|yes|$wget(891)|[User not Recognized - Access Denied.]) $button(885)Continue
+
+.lockpickskills
+art: safe.tci Using your lockpicking skills, you manage to get the safe open and see that the safe $wset(18|$wget(6))has $wget(106). $button(109)Take it? $button(885)Or better not...?
+
+.notuserfloppydisk
+art: lookaround.tci $if($pget(32)|yes|There is an old school 4KiB 80s era floppy disk on the desk. Should I $button(897)copy that floppy or $button(885)don't copy that floppy?|You don't have anything to copy this data to. $button(885)Hmm...)
+
+.copyfloppy
+art: lookaround.tci $pset(34|$wget(551))You now own a copy of $wget(551)'s dossier. The only way to view it is to visit the Mission Collective. $button(695)Continue.
+
+.notuserkeycard
+art: lookaround.tci $if($pget(36)|yes|There is a keycard here for the tenant of this room. Should I $button(903)transfer the data or $button(885)leave it alone?|You don't have anything to transfer this data to. $button(885)Hmm...)
+
+.copykeycard
+art: lookaround.tci $pset(38|$wget(551))You now own a copy of $wget(551)'s keycard. The only way to view it is to visit the Mission Collective. $button(695)Continue.
+
+.deliverjob1
+$if($wget(15)|0|You must be thinking of a previous job, there's nothing to deliver|$wget(909)) $button(695)Continue
+
+.deliverjob2
+$if($wget(15)|complete|You've completed another job, submit that before doing anymore deliveries|$wget(97)) 
+
+.lookaround
+art: tourism2.tci You see $wget(915). It must not only be transport units who stay here because you note a placard directing people to the $button(921)tourism office.
+
+.includetourism
+$wset(11|$wget(4))$wset(139|$uget($wget(11)|94))$wset(141|$uget($wget(11)|{USER_NAME_INDEX}))$wget(918)
+
+.tourisminclude
+$if($wget(139)|yes|$wget(141) head this way as well|Unit $wget(4) randomly looking around)
+
+.tourism
+art: tourism2.tci $pset(94|yes)Welcome to the Cyphertravel Office where we have exciting tour packages allowing you to explore the amazing corners of the world! Would you like to experience a thrilling $button(924)hot air balloon ride above the city, or walk through the $button(927)Room 800 archives? Or head back to the $button(420)Lobby?
+
+.hotairballoon
+art: tourism2.tci This hot air balloon ride will take you to the highest heights in the CypherWorld! $wget(587) looks to be considering this. From there you will be able to get a view of our amazing town and see the sights from the Entry Point to the towers of the Mission Collective! Interested in a ride? $button(1410)Let's go! - $button(921)Maybe later?
+
+.room800want
+art: ticketcounter.tci Wonderful - here's a one-time use ticket to access the Room 800 archives. $wget(587) is headed on the next tour as well. You'll want to get access via the $button(420)Hotel Elevators just across the lobby! $pset(57|yes)
+
+.marketsquare
+$pset(100|yes)Sandwiched in the alleys parallel to the subtrain lines sits the Market Square – a misnomer for the stalls lined on both sides of the pedestrian avenues, and spanning multiple floors up. The sound of commerce punctuated by the occasional whine of the $button(417)subway coming into port and the subsonic blast of air from the tunnel as the subway goes to its next step. Here, the black market is as active, if not more than the actual market. Do you want to $button(992)talk to the shopkeeper, $button(1098)a well dressed shopper, or to the $button(1135)itinerant sitting between two dumpsters? $if($pget(63)|off|Out of the corner of your eye, you notice an $button(954)alleyway.|You feel a draft coming from beside you, but don't see anything.)
+
+.downthealley
+art: ferry.tci You like cats so you follow it and find the world open up. The $button(954)apartments to your back, and ahead, you reach the edge of a concrete platform, water ahead. You see what looks like a $button(936)pier or dock, and activity.
+
+.ferry
+art: pier.tci You see a sign state "Entry Point" from the $button(954)alley. You observe that while there is technically a ferry, it seems to be parked. Units teleport out of thin air to the dock, and $button(939)start walking to Entry Point where you see $button(942)Maude assisting with name tags.
+
+.talktounits
+art: entrypointunits.tci You try to get the attention of the units walking towards Entry Point, but they don't seem to notice you and even walk around you in an effort to get to Maude $button(936)Continue.
+
+.maude
+art: entrypointmaude.tci You see Maude helping the new units with their name tags, and the constant uncapping and capping of her marker. "Hey {player_name}, what brings you here? Did they decide to finally $button(945) replace my marker? or were you just looking around? The $button(954)alley's back over there.
+
+.delivermarker
+$if($wget(15)|marker|$wget(948)|$wget(951))
+
+.delivermarkergood
+art: entrypointmaude.tci Oh great, the same color. $wset(15|complete) Tell someone I'd like a different color marker for once. Did you need to head back to the $button(936)dock or are you headed back to the $button(954)alley?
+
+.delivermarkerwrong
+art: entrypointmaude.tci Seems weird to say you're going to deliver something but not even have the marker I need. Did you drop it on the $button(936)dock or are you headed back to the $button(954)alley?
+
+.alleyway
+art: alleyway.tci $pset(116|yes)You find yourself in an alleyway lit by neon lights flickering overhead with promises of a $button(957)good time and $button(966)psychic readings. You see a patron standing outside of a $button(986)door, smoking. You startle a cat and it runs off $button(933)down the alleyway. Do you go forward or back to the $button(930)market square...?
+
+.goodtime
+art: goodtime1.tci You walk into what can only be described as a carpeted room, red curtains hanging in front of the doorways from the foyer. The host motions you through the curtain and as you pass lets you know, "Remember, we only take cash here." $button(960)Go through the curtains or $button(954)back to the alleyway.
+
+.goodtimecontinue
+art: goodtime.tci As you walk through, you are nearly blinded by all of the flashing lights and game sounds. You see all of the faces turn towards you expectantly, then fall disappointed and groan, "It's not Tim Kerski, it's some rando." as they return back to their games. Do you $button(963)look at the games, or $button(954)head out?
+
+.lookatgames
+art: goodtime.tci You've stepped into a vintage arcade with all of the classics like Pin, Trainracer, MetaTracker, and Cannon Fodder. You don't have any cyphercoins on you though, so looks like you won't be able to play for now. $button(954)Back to the alleyway.
+
+.psychic
+art: psychic.tci You step into a heavily decorated den, with tapestries hung all around. The air is thick with the smell of cinnamon, cloves, and orange. A voice trails from behind a beaded curtain, "Have you come here for a $button(969)reading or are you looking for $button(983)information? Or did you mean to go $button(954)elsewhere?"
+
+.reading
+art: psychic.tci $wget($random(972|974|976|978|980)) $button(969)Another reading or $button(966)something else?
+
+.reading1
+Very interesting...$if($pget(55)|yes|It seems like you have recently saved an entire island community and have revitalized it.|I see in your future the potential of being a hero for hundreds of units, but only out of your own volition)
+.reading2
+I'm sensing strong vibrations...$if($pget(30)|no|You have not yet explored the highest path you can.|I see you have explored the heights, and have in yourself the capability to bring great joy to many, one bit at a time.)
+.reading3
+Actions speak louder than words...$if($pget(14)|yes|As a giving person, you will find doors open to you in more ways than one|Endeavor to become a generous person, willing to help. This will open up more pathways to you.)
+.reading4
+What goes around comes around...If you would like for your actions to come back to you, you must put them out into the universe.
+.reading5
+Some cannot help but question everything they experience. This may lead to feeling trapped when what one should do is to live in the moment.
+
+.information
+art: psychic.tci Unfortunately I do not have more information than anyone else navigating through this world. Though Tim Kerski keeps returning regularly to see if I know a way out because he feels trapped. $button(966)Continue.
+
+.door
+art: door.tci The patron barely looks at you as you walk through the door. You've reached what looks like a small bedroom plastered with post-it notes, all of them with the Mission Collective's number. $button(989)Look at the notes, or $button(954)head back out?
+
+.lookatnotes
+art: door.tci $random(User files identify us as "players"...|No more than 15 different things you can get.|Where to buy cabbage and fish? And who's eating them? How?|People appear out of thin air at the Ferry and won't respond|How to become a librarian. Only jobs people seem to have are delivery, Maude, elevator operator, mechanic for one room, jobs guy?|There are only 3 books, which are shorter than my own notes.|Background drama between Maude and the Librarian?|I know Maude uses the marker for name tags, but what can I do with the marker?|Who's manufacturing all of the hot air balloons, and how do they have a constant supply of them?|hypercube...) $button(989)Look at more notes $button(986)Continue
+
+.shopkeeper
+art: shopkeeper.tci Ay the Market is 'er own beast, as ye ken see. And ah canna help but see yer lookin a bit lost. Dinna fash, I'll help ye out. Are ye in the market for goods with a more $button(995)reputable chain of custody, if'n ye will, or are ye $button(997)not concerned. Or are ye lookin for the $button(1101)costume shop or $button(930)somethin else?
+
+.marketgood
+art: shopkeeper.tci Respectable is as respectable does, I always say. Are ye lookin' ta $button(1000)purchase, $button(1060)sell, or $button(930)never mind.
+.marketbad
+art: shopkeeper.tci Ah a fella after me own heart! Life's too fas ta be so concerned, if'n ye know what I mean, and I think ye do! So are ye looking to $button(1009)purchase, $button(1060)sell, or $button(930)never mind.
+
+.marketgoodbuy
+art: shopkeeper.tci Ye have a technically gifted eye, I can tell these things. You won't easily find these elsewhere! I have here for you a $wset(1035|$wget(1003))$wget(1035)$wset(1044|$wget(1055)). What do ye think, $button(1006)$wget(1044) cypherbucks? Or maybe ye want to $button(995)think about it? But careful lest another customer purchase it, I dare say I won't find another!
+
+.goodbuytool
+$random(acoustic-coupler|terminal|lockpicks|walkie-talkie|marker)
+
+.toolmarketbuy
+$if($wget(1041)|0|$wget(136)|$wget(1050))
+
+.marketbadbuy
+$if($pget(4)|transport|$wget(1012)|$wget(1015)) or $button(997)do ye need some time to think about it?
+
+.marketbadbuy1
+art: shopkeeper.tci These aren't dumpster dive goods! $wset(1035|$wget(118)) They're jes well loved and used. A little dusting will help! Let's see, I've got a $wget(1035). Hmm...$wset(1044|$wget(1053))For $wget(1044) cypherbucks you can get $button(1038)$wget(1035)
+
+.marketbadbuy2
+art: shopkeeper.tci Ye didn't see this an ye didn't hear this, and nothin' that happens with these have anything ta do with me, but I have some $button(1018)great items unavailable anywhere else. $wset(1044|$wget(1057))I'll part with 'em fer $wget(1044) cypherbucks
+
+.tchotchkes
+art: shopkeeper.tci I owe the Librarian a great deal for these two finds. She told me to hold onto these til I could find someone I trusted. Would ye like to purchase the $button(1021)MEP Module for $wget(1044)? Or the $button(1027)CPU for $wget(1044), and then I of course have the $button(1032)Hypercube or $button(997)are you changing your mind?
+
+.tchotchkes2a
+$if($wget(1041)|0|$wget(1024)|$wget(1050))
+
+.tchotchkes2ai
+art: shopkeeper.tci $wset(1035|maudeterminal)"Here, I'll install the entry point module that'll take you back to Entry Point. It'll transmit your data, or anyone else's really, back to entry point. $wset(378|$wget(1047))They can only be used from visa transport nodes though, so if you find yourself in a pinch..." $pset(40|yes)$wset(1035|0)$wset(1044|0) $button(997)Thanks!
+
+.tchotchkes2b
+$wset(1035|CPU)$if($wget(1041)|0|$wget(1029)|$wget(1050))
+.tchotchkes2abi
+art: shopkeeper.tci You acquire the CPU. $wset(378|$wget(1047))$wset(1035|0) $wset(1044|0)$pset(19|yes)"Keep this purchase under wraps friend. Unregistered computer equipment gets the authorities worried. Here, in fact, take the $button(417)back way out."
+
+.tchotchkes2c
+You couldn't resist the urge and reached out for the $button(680)hypercube. 
+
+.product
+0
+
+.marketbuy
+$if($wget(1041)|0|$wget(136)|$wget(1050))
+
+.pricecheck
+$>($wget(376)|$wget(1044))
+
+.price
+0
+
+.walletadjust
+$-($wget(378)|$wget(1044))
+
+.purchasefail
+art: shopkeeper.tci Looks like you don't quite have enough cypherbucks - better luck next time! $button(992)All done!
+
+.random1530
+$random(15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30)
+.random5075
+$random(50|51|52|53|54|55|56|57|58|59|60|61|62|63|64|65|66|67|68|69|70|71|72|73|74|75)
+.random200225
+$random(200|201|202|203|204|205|206|207|208|209|210|211|212|213|214|215|216|217|218|219|220|221|222|223|224|225)
+
+.marketsell
+I am a purveyor of quality items, naturally and if ye don't ask me where I get me wares, I won't ask ye where you get yer's. So let me help ye declutter! You have $wget(1401). What do you want to sell? $button(1066)Check items 1-5 - $button(1079)Check items 6-10 or $button(992)never mind!
+
+.selltoken
+0
+
+.wanttosell1-5
+Which would you like to sell? $button(1068)$pget(119) $button(1070)$pget(121) $button(1072)$pget(123) $button(1074)$pget(125) $button(1076)$pget(127) or $button(992)never mind!
+.wanttosell1
+$wset(1035|$pget(119))$wset(1063|1)$wget(1092)
+.wanttosell2
+$wset(1035|$pget(121))$wset(1063|2)$wget(1092)
+.wanttosell3
+$wset(1035|$pget(123))$wset(1063|3)$wget(1092)
+.wanttosell4
+$wset(1035|$pget(125))$wset(1063|4)$wget(1092)
+.wanttosell5
+$wset(1035|$pget(127))$wset(1063|5)$wget(1092)
+
+.wanttosell6-10
+Which would you like to sell? $button(1081)$pget(129) $button(1083)$pget(131) $button(1085)$pget(133) $button(1087)$pget(135) $button(1089)$pget(137) or $button(992)never mind!
+.wanttosell6
+$wset(1035|$pget(129))$wset(1063|6)$wget(1092)
+.wanttosell7
+$wset(1035|$pget(131))$wset(1063|7)$wget(1092)
+.wanttosell8
+$wset(1035|$pget(133))$wset(1063|8)$wget(1092)
+.wanttosell9
+$wset(1035|$pget(135))$wset(1063|9)$wget(1092)
+.wanttosell10
+$wset(1035|$pget(137))$wset(1063|10)$wget(1092)
+
+.marketsellpriceagree
+art: shopkeeper.tci I'll be happy to take it off of yer hands for, let's say, $wset(1044|$wget(1053)) $wget(1044) Cypherbucks. What do you say? $button(112)Agree or $button(992)change your mind?
+
+.addmoneyfrommarket
+$+($wget(378)|$wget(1044))
+
+.tailorentry
+art: alleyway.tci The sharply dressed individual Unit $wget(4) disappears into the shop just as you're about to approach them. You follow them into what looks like a costume shop. $button(1101)continue
+
+.tailorshop
+art: tailorshop.tci $pset(102|yes)As your eyes adjust to the dim lights, the proprietor looks at you.$wget(1104). "Welcome to the costume shop, are you looking to $button(1110)change your costume, or did you need to go to the back to get some $button(1120)custom adjustments done? Or did you need to head back to $button(930)the market?
+
+.includetailorshop
+$wset(11|$wget(4))$wset(139|$uget($wget(11)|102)) $wset(141|$uget($wget(11)|{USER_NAME_INDEX}))$wget(1107)
+
+.tailorinclude
+$if($wget(139)|yes|$wget(141) is also looking around|Unit $wget(4) is checking themselves out)
+
+.tailorclass
+art: tailorshop.tci You are currently wearing last week's $pget(4) wear. We could always update your $button(1113)Transport Class wear. $if($pget(14)|yes|Some are experimenting with $button(1115)Volunteer Class threads.|)$if($pget(10)|yes|But what a surprise! You decided to come amongst the worldlings! Did you want to go back to the $button(1117)lap of luxury?|) Well, that seems to be all of the options I can offer! $button(1101)Go back
+
+.tailortransport
+art: tailorshop.tci $pset(4|transport)Such a classic and timeless look, you're all set! $button(1101)Check yourself in the mirror before you go!
+.tailorvolunteer
+art: tailorshop.tci $pset(4|volunteer)Very boho chic, like you've just stepped out of a library! $button(1101)Check yourself in the mirror before you go!
+.tailoradmin
+art: tailorshop.tci $pset(4|administrator)Haute couture at its finest! I have a special way out for you! So you don't get any soot on that gorgeous outfit. $button(1314)Toodaloo!
+
+.tailorshift
+art: tailorshopback.tci You find yourself having followed the proprietor into the backroom. "Now, what kind of adjustments were you looking for again?" Do you want to look at other $button(1110)costume options or those $button(1123)other adjustments, you know, the ones, or did you need to $button(930)find the exit.
+
+.inventoryshift
+art: tailorshopback.tci We'll have to make this fast, a lot of randoms have been sniffing around again. The proprietor turns off the lights, and pulls a rack of costumes back revealing a computer. "Okay you wanted the $wget(15) changed to your own inventory" right? $button(1126)Yep...or...$button(1120)never mind?
+
+.inventoryshiftinprogress
+art: tailorshopback.tci $if($wget(15)|0|You don't have anything to move! $button(384)Go out the back way!|$wget(1129))
+
+.inventoryshiftprogress2
+art: tailorshopback.tci $if($wget(15)|complete|You need to submit the job! $button(387)Go out the back way!|$wget(1132))
+
+.inventoryshiftcomplete
+art: tailorshopback.tci A few quick strokes and you feel something shift. $pset(119|$wget(15))$wset(15|complete)"You should go back to the Subway Office and submit the job before doing anything else. They still think you're on job $wget(13). Here, if you head out this way, it leads to the $button(387)Subway Office but get $button(930)rid of the item as soon as you can after that!"
+
+.itinerant
+art: dumpster.tci As you approach the itinerant, he tips his lidless hat at you, "Hey {player_name}, long time no see, I've been doing some dumpster diving but gotta admit, the loot's been kinda hit or miss lately. Though $wget(1138). I might head back to the $button(1101)costume shop to update the threads or maybe $button(930)the market square for some eats." Will you go with him or stay to $button(1144)dumpster dive?
+
+.includedumpsterdive
+$wset(11|$wget(4))$wset(139|$uget($wget(11)|104))$wset(141|$uget($wget(11)|{USER_NAME_INDEX}))$wget(1141)
+
+.dumpsterinclude
+$if($wget(139)|yes|$wget(141) is also dumpster diving|Unit $wget(4) just got some great loot)
+
+.dumpster
+art: dumpster.tci $pset(!atdumpster|yes)The dumpster looks a little suspect, but the stranger itinerant seemed to think it was worth his time. Do you want to $button(1147)throw any trash away, go $button(115)dumpster diving, or $button(930)head back!
+
+.dumpsterthrow
+art: dumpster.tci Here is what you have in your inventory: $wget(1401). Which would you like to throw away? These won't be recoverable! $button(1150)Check items 1-5 - $button(1163)Check items 6-10 or $button(1144)never mind!
+
+.dumpsterthrow1-5
+Which would you like to throw away? These won't be recoverable! $button(1152)$pget(119) $button(1154)$pget(121) $button(1156)$pget(123) $button(1158)$pget(125) $button(1160)$pget(127) or $button(1144)never mind!
+.dumpsterthrow1
+$pset(!$pget(119)|no)$pset(119|0)$wget(1176)
+.dumpsterthrow2
+$pset(!$pget(121)|no)$pset(121|0)$wget(1176)
+.dumpsterthrow3
+$pset(!$pget(123)|no)$pset(123|0)$wget(1176)
+.dumpsterthrow4
+$pset(!$pget(125)|no)$pset(125|0)$wget(1176)
+.dumpsterthrow5
+$pset(!$pget(127)|no)$pset(127|0)$wget(1176)
+
+.dumpsterthrow6-10
+Which would you like to throw away? These won't be recoverable! $button(1165)$pget(129) $button(1167)$pget(131) $button(1169)$pget(133) $button(1171)$pget(135) $button(1173)$pget(137) or $button(1144)never mind!
+.dumpsterthrow6
+$pset(!$pget(129)|no)$pset(129|0)$wget(1176)
+.dumpsterthrow7
+$pset(!$pget(131)|no)$pset(131|0)$wget(1176)
+.dumpsterthrow8
+$pset(!$pget(133)|no)$pset(133|0)$wget(1176)
+.dumpsterthrow9
+$pset(!$pget(135)|no)$pset(135|0)$wget(1176)
+.dumpsterthrow10
+$pset(!$pget(137)|no)$pset(137|0)$wget(1176)
+
+.dumpsterthrown
+art: dumpster.tci You feel lighter! $button(1147)More to throw or $button(1144)done for now!
+
+.trash
+0
+
+.missioncollective
+art: missionarchive.tci $pset(106|yes)You find yourself in the neon-lit atrium of a cavernous welded steel structure, a quiet hum of those navigating terminals and accessing digital files. $wget(1188) is admiring the hovering holographic images displaying the contents of history, art, and literature. A librarian's assistant approaches you. $button(1185)Continue
+
+.missioncollective2
+art: missionarchive.tci "Welcome to the Mission Collective! What brings you to our esteemed institution of learning? Are you looking to learn some $button(1194)history, $button(1197)perform technological analysis, $button(1257)read a book, or $button(1209)volunteer or a job? Or have you other $button(417)travels to look forward to?"
+
+.includemissioncollective
+$wset(11|$wget(4))$wset(139|$uget($wget(11)|106))$wset(141|$uget($wget(11)|{USER_NAME_INDEX}))$wget(1191)
+
+.mcinclude
+$if($wget(139)|yes|$wget(141)|Unit $wget(4))
+
+.missionhistory
+The Mission Collective was founded by our resident Librarian who also does most of the local welding work such as the Mission Collective itself! In fact her welding show piece is a custom built clarion which fills the missions bell tower behind you. It includes 100s of chimes, bells, and gongs. In the initial days of its inception, it served as the meal bell calls, and while our community is now too large and separate to do that now, if we're lucky, the Librarian sometimes comes out between projects to perform a concert! $button(1185)Back to the atrium.
+
+.missionanalyze
+art: missionanalyze.tci $pset(106|yes)You find yourself in a side wing filled with systems and terminals from different eras set up in neat rows; their cables organized in striking vertical columns and disappearing into the floor. It's warmer and louder here. $wget(1188) is working at a vintage terminal. A librarian approaches you. $button(1200)Continue
+
+.linemancheck2
+$if($pget(14)|no|$wget(1218)|$wget(1221))
+
+.linemancheck
+$if($pget(14)|no|$wget(1206)|$wget(1212))
+
+.notvolunteer
+art: linecheck.tci Well, it looks like we don't have you in our logs as a volunteer, would you be $button(1215)up for it or $button(1182)maybe later? Or...are you here about a $button(1290)job?
+
+.missionvolunteer
+art: missioncollectivevolunteer.tci Oh how lovely, we are always grateful for volunteers! We're currently looking to set up our internal network again and need some help. Let me help $wget(1188) get set up first and then I'll help you out. $button(1203)Sure!
+
+.volunteer
+art: linecheck.tci *checks system* Wonderful, we actually already have you down in our logs as a volunteer! You can use the lineman handset to enter the network through one of our computers $button(1197)here! Or...are you here about a $button(1290)job?
+
+.missiongetlineman
+art: missioncollectivevolunteer.tci Wonderful, let me hand you this lineman's handset$pset(65|yes)$pset(14|yes)$pset(4|volunteer). Let the previous librarian know you're interested in technological analysis, and she can take you to a system you can enter the network through. $wget(1188) is already headed that way. $button(1197)This way!
+
+.analyzenolineman
+art: missionanalyze.tci You've come to the right place unless you'd like to go back to the $button(1182)foyer. What data format will you be performing your analysis on? $button(1224)floppy disk or $button(1236)keycard?
+
+.analyzeyeslineman
+art: missionnetwork.tci It's so nice to see one of our own volunteers so interested in doing technological analysis, and in fact, $wget(1188) just stopped by, maybe you saw them in the $button(1185)foyer? What data format will you be performing your analysis on: $button(1227)Self Viewer, $button(1224)floppy disk, $button(1236)keycard or $button(1239)network? Oh, just in case you have any questions, here's a little post-it note with our number$pset(47|yes)!
+
+.userfileviewer
+$if($pget(14)|yes|$wget(1233)|$wget(1230)) 
+
+.selffile
+The viewer displays your user file. User Name: {player_name} - Player ID: {player_id} - Player UserClass: $pget(4) - Room Terminal Status: $pget(28) - BIOS Terminal Status: $pget(25) - Inventory: $wget(1401) $button(1200)Self Review Complete.
+
+.userfileviewerbasic
+The viewer displays the file on the floppy. User Name: $uget($pget(34)|{USER_NAME_INDEX}) - Player ID: $pget(34) - Player UserClass: $uget($pget(34)|4) - Room Terminal Status $uget($pget(34)|28) - BIOS Terminal Status $uget($pget(34)|25) - $button(1200)Floppy Review Complete.
+
+.userfileviewervolunteer
+The viewer displays the file on the floppy. User Name: $uget($pget(34)|{USER_NAME_INDEX}) - Player ID: $pget(34) - Player UserClass: $uget($pget(34)|4) - Room Terminal Status: $uget($pget(34)|28) - BIOS Terminal Status: $uget($pget(34)|25) - Inventory: $wget(1404) $button(1200)Review Complete
+
+.keycardviewer
+User Name: $uget($pget(38)|{USER_NAME_INDEX}) - Player ID: $pget(38) - Transport Class: $uget($pget(38)|6) - Hacker Class: $uget($pget(38)|8) - Volunteer Class: $uget($pget(38)|14) - Architect Class: $uget($pget(38)|12) - Administrator Class: $uget($pget(38)|10) $button(1200)Review Complete
+
+.missionanalyzenetwork
+art: missioncollectivenetwork.tci You sit at a terminal and dial in with your Cyphertel lineman's handset. Green text on a phosphor screen appears: Semaphore Line OS You know this!:> $button(166)Name Change - $button(1242)CypherOS access - $button(1284)B10S Assembler - $button(1287)readme.txt - $button(1200)Return
+
+.biosaccess
+$if($pget(25)|yes|$wget(1245)|[Non-Local Access Detected. Access Denied] $button(1197)Shutdown)
+
+.cypherosMC
+art: cypheros.tci [Local Access Granted] appears on the screen along with the following options: $button(1248)Job to Self Inventory Shift - $button(1275)Delta Chat - $button(1239)Back
+
+.inventoryshiftcheckMC
+art: cypheros.tci $if($wget(15)|0|No inventory to move!$button(1245)Back to the network.|$wget(1251))
+
+.inventoryshiftcheck2
+art: cypheros.tci $if($wget(15)|complete|Submit your job to the jobs office!$button(1245)Back to the network.|$wget(1254))
+
+.inventoryshiftdoneMC
+art: cypheros.tci Inventory shift complete. $pset(!(wget(15)|yes))$pset(119|$wget(15))$wset(15|complete). Report to the Subway Office and submit the job for job $wget(13). $button(1245)Back to the network.
+
+.missionread
+art: missionbook.tci While most stories have been digitalized, you are brought to a side of the Library where the earthy smell of paper permeates the air. It seems the air has not been disturbed here for some time. It looks like you'd like to read a book. Would you like to read a $button(1260)short story, $button(1263)self help book, or $button(1266)technical manual? Or perhaps you'd like to return to the $button(1182)foyer?
+
+.missionnovel
+$wget(1188) seems to be invested in this book and doesn't hear you as you settle in....Deep in the underground, a secret network known as B10S-800 was to be dismantled. One lone engineer volunteered to be the last one to decommission the centralized Cypher Operating System as it had been their life's work. However, it was merely put into a state of deep hibernation. A key was created, which when applied in the correct circumstances, would revive the operating system and allow access to the inert network... $button(1257)Reading Complete.
+
+.selfhelp
+art: missionbook2.tci Sometimes, one goes through life feeling like they are surrounded by NPCs, those who have pre-prescribed thoughts and motions. It makes it easy to minimize the value of the other, until you realize they are human just like you. Connecting with others will help you expand your universe and your capability to experience life! $button(1257)Reading Complete.
+
+.missiontech
+$if($pget(17)|no|$wget(1269)|$wget(1272))
+
+.missiontechnoram
+art: missionbook2.tci Something drops out of the manual into your lap...are those...RAM chips?$pset(17|yes)$button(1266)Turn the page...
+
+.missiontechyesram
+art: missionbook2.tci Computers in the early ages of mankind were amalgamations of various components. The most common were the CPU, RAM, Graphics Driver, and peripherals. Because of high costs, sometimes individuals would dumpster dive to see if they could find spare parts! $button(1257)Reading Complete.
+
+.deltaislandchatMC
+You sign onto the delta island chatroom, and a conversation is already ongoing. "Okay, isn't it weird that we have all of this infrastructure, but the only jobs that people have is literally delivering junk from one place to another?" ... "Don't you believe in the infrastructure Tim Kerski? It just doesn't need fixing." $button(1278)Continue reading.
+
+.dicmc2
+"Also, we've all checked out the keycard analyzers, and what is the architect class or administrator class? Who are they? What do they do? That's right, no one knows." ... "Maybe it's the individuals who designed the Delta Factory?." ... "Yeah, you need architects to design buildings." ... "But these buildings have been here for forever, when were they even built?!" $button(1281)Continue reading.
+
+.dicmc3
+"Okay, last thing. Where's the food? The Mission Collective was founded to do meal calls, and the itinerant by the dumpsters always says he's going to get some food, but where?!" ... "You know, it's not healthy to eat at restaurants too much Tim Kerski." ... "Yeah! Making your own food will save you cypherbucks too." ... $button(1239)Disconnect.
+
+.biosassembler
+art: missionassembler.tci The assembler loads up and you see a 3d modeler. It looks like we have $if($pget(17)|yes|the bios800 ram|no RAM found), $if($pget(19)|yes|the bios800 CPU|no CPU found), $if($pget(21)|yes|the bios800 graphics card|no graphics driver found), and $if($pget(23)|yes|the bios800 peripherals|no computer peripherals found). $button(1239)Return.
+
+.missionreadme
+You see some random scribbled notes. Market VC >> MF 800: Tech list: ram from book, cpu from market, peripherals from job, graphics from factory...$button(1239)Return.
+
+.missionjob
+art: missioncollectivevolunteer.tci Oh, of course, thanks for coming by! $if($pget(23)|yes|$wget(1293)|$wget(1296))
+
+.missionnojob
+art: missioncollectivevolunteer.tci Looks like you've got what you need at this time, and we don't have any other packages to deliver at this time. $button(1197)Thanks for stopping by!
+
+.missionyesjob
+art: missioncollectivevolunteer.tci Let's see...the only job we have available is Job 7. Here's the requested item: $wget(37).$wset(15|$wget(37))$pset(23|yes)Safe travels! $button(1197)Continue
+
+.central
+art: central.tci $pset(108|yes) A computerized announcement greets you "Cyphercon Central greets you. Here at Cyphercon, we strive to make the world a better place by maintaining connections and services to fulfill your needs." $wget(1308) steps off of the platform in awe of the solarium. Time to $button(1314)look around or head back on the $button(417)transport platform.
+
+.centralfountain
+art: centralfountain.tci $if($pget(30)|empty|Would you like to $button(1305) fill your dixie cup?|Lovely fountain. You toss in a few coins to make a wish. $button(1314)Onwards!)
+
+.filldixie
+art: centralfountain.tci You scoop some excellent water into your dixie cup! $pset(30|full) $button(1314)Where next?
+
+.includecentral
+$wset(11|$wget(4))$wset(139|$uget($wget(11)|108))$wset(141|$uget($wget(11)|{USER_NAME_INDEX}))$wget(1311)
+
+.centralinclude
+$if($wget(139)|yes|$wget(141)|Unit $wget(4))
+
+.explorecentral
+art: centralmap.tci At the center of the Cyphercon Central Solarium is a map. As you approach it, you are scanned. "Unit {player_id} also known as {player_name} is of a $pget(4) Class. $if($pget(4)|transport|$wget(1320)|$wget(1317))
+
+.volunteermapcheck
+$if($pget(4)|volunteer|$wget(1320)|$wget(1323))
+
+.transportmap
+art: centralmap.tci You may access the following areas: $button(1326)Maintenance Tunnels - $button(1338)Training Classes - $button(1386)OT-15 Service Panel - $button(1302)Central Fountain or $button(417)Return to the Transport Platform."
+
+.adminmap
+art: centralmap.tci You may access the following areas: $button(1368)The Lounge - $button(1377)Le Masquerade - $button(1326)Maintenance Tunnels
+
+.maintenance
+art: maintenance.tci You follow the map down the sloped pathways heading towards warmer and more humid air. The deeper you walk, the more you notice the pipes around you with massive relief valves. It is not as well lit here. $if($pget(4)|administration|It's a bit damp down here for you, might I guide you back to the $button(1368)Lounge?|Are you here to $button(1329)deliver something or did you just need a $button(1335)shortcut?)
+
+.deliverairfilters
+$if($wget(15)|air-filters|$wget(1332)|You don't have the airfilters I need - did you just mean to take a $button(1335)shortcut or did you need to go back to the $button(1314)Map?)
+
+.deliverygood
+art: maintenance.tci Blessed alive, someone has air filters to bring to me! $wset(15|complete)Thanks for dropping these by, it'll help a lot! Now did you need to take a $button(1335)shortcut elsewhere or headed back to the main $button(417)transport platform?
+
+.shortcut
+art: maintenance.tci Sure - even though these maintenance tunnels are no place for the admins, it's easy to get to $button(465)your room, $button(1197)the Mission's computer wing, and even the $button(930)Market Square. You can also cut to the $button(417)transport platform from here.
+
+.trainingclass
+art: missionnetwork.tci You find yourself in a dimly lit room, computer terminals litter the space and cables lie in tangled masses. You see others take seats behind the dotted light sources. "Hi, welcome to the CypherCon training class! Are you here to $button(1350)take a class or $button(1341)deliver a package?"
+
+.deliverhoodies
+$if($wget(15)|hoodies|$wget(1344)|$wget(1347))
+
+.deliverhoodiesgood
+art: missionnetwork.tci Sweet! Class, the hoodies have arrived! $wset(15|complete) Thanks for dropping these by, it'll help a lot! Did you want to $button(1350)join us or are you headed back to the $button(1314)map?
+
+.deliverhoodieswrong
+art: missionnetwork.tci You don't have the hoodies I need - did you just mean to take a $button(1335)shortcut or did you need to go back to the $button(1314)map?
+
+.takeaclass
+art: training.tci $pset(110|yes)"Great - glad you're joining us! Please take a hoodie$wset(67|yes) and find a computer." ... "Everyone, please turn on your computers, open up an empty file and type furiously, as fast as you can, on whatever you want. Go ahead!" The trainer walked around as the units typed quickly on everything and nothing. $button(1353)You join in.
+
+.takeaclass2
+"So how many typed the words 'as fast as you can', typed about the things you saw around you, typed conversational thoughts, or even details about yourself? And how many were just about to?...How much information did you just provide a strange system without even thinking about how personal that information was or what details it could provide someone you didn't know? So lesson one: when people are rushed, pressured, they will divulge more information than they should. Conversely, when you /act/ rushed or pressured, or constrained, others may divulge more information to you than they should." $button(1356)Lesson 2? or $button(1314)back to the atrium.
+
+.takeaclass3
+"When you go to a new place that you've never been to, what are some behaviors you notice yourself doing? Is it the asking directions or looking for directions body language? Is it the scanning around for available signage rather than knowing where it is? Is it maybe watching other people to see what they do so you know how appropriate it is for you to do the same?" $button(1359)Everyone ponders.
+
+.takeaclass4
+"So if you are training to infiltrate going into a place, what is the most important thing to do?"..."Research. Confidence. Taking advantage of kindness"... "Know the barriers to entry, dress code, the flow of foot traffic. Pretend like you've been on this same schedule for years and that you know exactly where and when you're going because you belong here. And if someone calls you out, 'You know how bosses can get, I'll follow up with you later!' and make sure you blend into the background." $button(1362)Continue
+
+.takeaclass5
+"Though of course, sometimes, looking like a newbie and asking for directions can get you right to where you need to be, like 'Oh I'm here for a meeting on *look at paper* 7th floor, and I was told to take the elevators up, right there, right?' and before you know it, they're confirming your route of entry. $button(1365)Lesson 3? or $button(1314)back to the atrium
+
+.takeaclass6
+Alright final thought exercise for class today - Let's say I were to tell you that there was a single switch underground that when flipped off, would reveal a hidden alleyway in the Market Square. And well, I've already said too much. There may or may not be truth to my statements. That's it! Thank you for joining the class - $pset(8|yes)please don't forget your hoodies! $button(1314)Back to the atrium.
+
+.lounge
+art: lounge.tci $pset(6|no)$pset(14|no)Welcome {player_name} to the Lounge, only available for our most accomplished patrons. We welcome you to enjoy the view from above and watch the inner workings of our units as they go about their daily business. You can view a random user's $button(1371)file and see where they have been. Or if you choose to have a more hands on approach, please feel free to visit $button(1377)Le Masquerade.
+
+.userfileviewerelite
+$wset(11|$wget(4)) User Name:$uget($wget(11)|{USER_NAME_INDEX}) - Player ID:$wget(11) - Player UserClass:$uget($wget(11)|4) - Room Terminal Status:$uget($wget(11)|28) - BIOS Terminal Status:$uget($wget(11)|25) - Last Location: $wget(1374) - $button(1368)Return
+
+.randomtokenlocation
+1-Lobby:$uget($wget(11)|84) 2-Elevator:$uget($wget(11)|86) 3-Room 800:$uget($wget(11)|90) 4-Tourism Office:$uget($wget(11)|94) 5-Hot Air Balloon:$uget($wget(11)|96) 6-Costume Shop:$uget($wget(11)|102) 7-Dumpster:$uget($wget(11)|104) 8-Mission Collective:$uget($wget(11)|106) 9-Jobs Office:$uget($wget(11)|82) 10-Central:$uget($wget(11)|108) 11-Trapped on Delta:$uget($wget(11)|112) 12-Exploring Delta Factory:$uget($wget(11)|114) 13-Subway:$uget($wget(11)|80) 14-Lodging Room:$uget($wget(11)|88) 15-Market Square:$uget($wget(11)|100)
+
+.masquerade
+art: masquerade.tci You are greeted by a masked individual dressed to the nines. "It is one thing to watch these little units scurry about, but it is another thing to experience their world. I, Le'Masquerade will help you. What would you like to change into? $button(1380)Transport Class or $button(1383)Volunteer Class or perhaps you changed your mind and want to go back to the $button(1368)Lounge?
+
+.masktransport
+art: masquerade.tci Lovely! $pset(4|transport)$pset(6|yes)If, when, you decide to join us again, just stop on by the Costume Shop in the less savory parts of town, we have our own agent there. He'll change you back to an administrator class and then when you check back into Central, you'll be able to come up back the lounge! $button(417)Now off to the transport platform with you!
+
+.maskvolunteer
+art: masquerade.tci Volunteers are quite nicely received. $pset(4|volunteer)$pset(14|yes)If, when, you decide to join us again, just stop on by the Costume Shop in the less savory parts of town, we have our own agent there. He'll change you back to an administrator class and then when you check back into Central, you'll be able to come up back the lounge! $button(417)Now off to the transport platform with you!
+
+.otisservicepanel
+art: otis.tci You see signs pointing to the service corridor stating: "Transport Units, please report to the OT-15 system." The very OT-15 that some unknown hackers managed to infiltrate?! There is a single switch on the wall, which is somewhat odd for such massive infrastructure, but you see $wset(11|$wget(4))that $uget($wget(11)|{USER_NAME_INDEX}) is here as well, and turned their switch $uget($wget(11)|63). $if($pget(63)|off|$wget(1389)|$wget(1392))
+
+.question1
+Would you like to turn the switch $button(1395)on? or $button(1314)not now.
+
+.question2
+Would you like to turn the switch $button(1398)off? or $button(1314)not now.
+
+.on
+art: otis.tci The mechanics toggle a few other levers and switches, and motion for you to lift the switch up and put it in the ON position$pset(63|on). They thank you and help get the next unit in place to flip the switch. $button(1314)Back to the map for now.
+
+.off
+art: otis.tci The mechanics toggle a few other levers and switches, and sadly watch as you turn the switch off. $pset(63|off)You didn't make any friends today. $button(1314)Back to the map for now.
+
+.selfinventorylist
+1-$pget(119) 2-$pget(121) 3-$pget(123) 4-$pget(125) 5-$pget(127) 6-$pget(129) 7-$pget(131) 8-$pget(133) 9-$pget(135) 10-$pget(137)
+
+.otherinventorylist
+1-$uget($pget(34)|119) 2-$uget($pget(34)|121) 3-$uget($pget(34)|123) 4-$uget($pget(34)|125) 5-$uget($pget(34)|127) 6-$uget($pget(34)|129) 7-$uget($pget(34)|131) 8-$uget($pget(34)|133) 9-$uget($pget(34)|135) 10-$uget($pget(34)|137) 
+
+.ownsafeinventorylist
+1-$pget(140) 2-$pget(142) 3-$pget(144) 4-$pget(146) 5-$pget(148) 6-$pget(150) 7-$pget(152) 8-$pget(154) 9-$pget(156) 10-$pget(158) 
+
+.hotairballoonride
+$if($pget(55)|yes|$wget(1413)|$wget(1416))
+
+.mephotairballoonride
+You're escorted up a transport elevator to the roof of the hotel where a large hot air balloon is tied down. This feels like dejavu. Looks like $wget(1419) is along for the journey. You hear the balloon being fired up, and up up and away you go! The tour guide points out the Mission Carillon Tower, along with the telltale signs of the subway system and market space in between. $wget(1431)
+
+.nomephotairballoonride
+art: hotairballoonride.tci $pset(96|yes)You're escorted to the roof of the hotel where a large hot air balloon is tied down. Looks like $wget(1419) is also here. You hear the balloon being fired up. The tour guide opens up the basket for you to hop on but wheels around suddenly, "Oh hey, give me a second, I need to get a backup MEP module". He hops off the basket and disappears. $button(1425)You wait.
+
+.includehotairballoonride
+$wset(11|$wget(4))$wset(139|$uget($wget(11)|96))$wset(141|$uget($wget(11)|{USER_NAME_INDEX}))$wget(1422)
+
+.hotairinclude
+$if($wget(139)|yes|$wget(141)|Unit $wget(4))
+
+.ride2
+art: hotairballoonride.tci You wait for him to return, but for some reason, the tour guide forgot to re-tie the main line keeping the balloon grounded and the balloon starts rising up. You call out in shock, but don't jump out of the basket in time and now it's too high off the roof. You see the tour guide return and start running towards the balloon, yelling out "Find a visa transport node!" $button(1428)Welp.
+
+.deltafactory1
+art: hotairballoonride2.tci Sure enough, you get what would have been a lovely view of the city with the carillon towers rising high from Mission Collective, and the telltale signs of the subway system scrawled between the major points. But you are heading up. And up. $button(1431)Continue.
+
+.deltafactory2
+$if($pget(55)|yes|$wget(1434)|$wget(1440))
+
+.deltafactory3
+$pset(114|yes)The hot air balloon lands again in the middle of the shipping container yard, but you're not greeted by panicked individuals anymore. In fact, because of the MEP module, and the great pay at the Delta Factory, there's an increased workforce on the island. $wget(1419) is living the dream off of the wages. Do you head to the $button(1482)Delta Factory or $button(1437)head back to the City?
+
+.deltavisamep
+art: deltavisanode.tci You find yourself at the the visa transport node. There are multiple charging / transport platforms in a row and all powered on. A line of brand new units are seen being transported. Many older units are also in line, presumably taking money back down. $button(1482)Back to the factory or $button(384)Back to the city!
+
+.deltafactory4
+$pset(112|yes)You don't quite know how much time has passed but enough that you had fallen asleep. The hot air balloon was no longer swaying as you had expected, and strangely had somehow found a place to land. It was in the middle of a shipping container yard and apparently a graveyard for other hot air balloons. This had happened before. $wget(1443) follows everyone else coming towards you. Strangers yell "Do you have a MEP module?!" $if($pget(40)|yes|$wget(1449)|$wget(1452))
+
+.includedeltabad
+$wset(11|$wget(4))$wset(139|$uget($wget(11)|112))$wset(141|$uget($wget(11)|{USER_NAME_INDEX}))$wget(1446)
+
+.deltabadinclude
+$if($wget(139)|yes|$wget(141)|Unit $wget(4))
+
+.theyhaveit
+With the knowledge you've gotten from the shopkeeper, you realize you have the MEP module installed. You call out over the yells and say you have one! The crowd starts crying tears of happiness. "You're literally the most valuable unit on this island right now. Please, we need to get the module installed at the $button(1461)visa transport node." 
+
+.theydonthaveit
+The strange units surround you and keep yelling out "Do they have the MEP module?" You decide to stay in the basket. Someone pulls out a scanner and makes a sound of disgust. "Nope, this one's trapped just like the rest of us." A collective groan goes up, and they walk off. $wget(1443) opens up the basket and motions you out. $button(1455)What is going on?
+
+.wtf
+I'm guessing you decided to take a hot air balloon ride? And the idiot tour guide "forgot to get a backup MEP module"? You nod. "Yeah, there must be some kickback to him for sending usable units up to this factory. Most of us just wanted to explore before running any jobs, and well, now we're trapped. There's no way to get down back to the city without a MEP module. And unless someone else comes up here and has a MEP module, welcome to your new home." $button(1458)Say what? $button(1461)Visa transport node? $button(1482)Factory?
+
+.tellmemore
+art: factory.tci This is Delta Factory - it's where all transport class units are made and then shipped down to Entry Point when requisitioned. Only problem is each unit has a one-time MEP module that can't be used for anyone else. The only MEP that can bring multiple units back into the city is one found down there, but finding someone who isn't trapped has been difficult. And that's the whole of this island. $button(1461)Visa transport node? $button(1482)Factory?
+
+.deltavisa
+art: deltavisanode.tci You find yourself at the the visa transport node. There are multiple charging / transport platforms in a row and are all powered on. A line of brand new units are seen being transported. $if($pget(40)|yes|Do you want to $button(1476)install the MEP module or do you want to check out the $button(1482)Delta Factory?|$wget(1464))
+
+.deltavisalook
+You see multiple units just milling around the visa transport node area in various states of distress. $wget(1443) is on a computer at the transport area calling out about how they had just reached someone in the city and told them to bring a MEP module. $if($pget(51)|yes|You remember you got a walkie-talkie at some point and call "mayday mayday"....$wget(1467)|If only you had a way to communicate with the city...) $button(1482)Look around some more.
+
+.maudecall
+"You're awfully staticy there {player_name}, almost like you're as far away as Delta Island? What d'ya need?" $button(1470)Help!$button(1473)What good is being up here?
+
+.howdoigetback
+art: factory.tci That tour guide up to no good again huh? You can talk around, someone's always selling a one-use MEP module, scalped no doubt from... $button(1464) *static*
+
+.whatcanidohere
+art: factory2.tci I hear the jobs up there pay way more than down here. You could make money, or if you're trying to be generous, get them to install a MEP module at the visa transport... $button(1464) *static*
+
+.installMEP
+art: deltavisanode.tci You approach the terminal that the others have directed you to, and after carefully removing it from your body, you plug the innocuous-looking module into the visa transport node terminal. Code begins to pour out, screen after screen. Do you want to $button(1479)confirm the installation?
+
+.confirminstall
+art: deltavisanode.tci You confirm the install. $pset(55|yes)Units begin lining up at the transport platforms to get sent to Entry Point. You decide to do so too. You get to head back $button(384)home!
+
+.deltafactoryfloor
+art: factorybuild.tci The rhythmic sound of units manufacturing other units can be heard on the factory floor. $if($pget(55)|yes|$wget(1488)|$wget(1485))
+
+.meanforeman
+The foreman sees you looking around. $button(1491)"Get back to work slacker!" or $button(1461)You make a quick exit.
+
+.niceforeman
+The foreman lights up as they see you, "Great to see you return, how's the family? We've prepped your $button(1494)build station just for you! Coffee's in the breakroom, Maude even brought donuts!" Or did you need some fresh air at the $button(1437)Delta Visa node?
+
+.build
+art: build.tci You decide to blend in and stand at a station. Other units trapped on the island by the tour guide seem to be working as well. $wget(1443)'s eyes look glazed over. $button(1515)Do you talk to the other units, or do you $button(1500)make a unit.
+
+.buildmep
+art: build.tci Everyone looks to be having a fun time putting together units. $button(1512)Do you talk to the other units, or do you $button(1500)make a unit.
+
+.walletadd
+$+($wget(378)|50)
+
+.manufacture
+art: factorybuild.tci You make a unit. $button(1503)Submit it for inspection.
+
+.manufacture2
+$if($pget(55)|yes|$wget(1509)|$wget(1506))
+
+.manufacturecont
+art: factorybuild.tci About time! $wset(378|$wget(1497))Here are more parts... $button(1515)Do you talk to the other units, or do you $button(1500)make a unit or $button(1461)take a break.
+
+.manufacturecontmep
+art: factorybuild.tci Great job!...$wset(378|$wget(1497))Here are more parts. $button(1512)Do you talk to the other units, or do you $button(1500)make a unit or $button(1437)take a break.
+
+.talkmep
+art: talk.tci $random(Sometimes even Maude comes up here to get some extra shopping cash!|Did you hear about the new homeowner's association they're setting up on the island?|Heard that the unit that opened up transportation was a Mission volunteer.|Has anyone figured out why the tour guide still doesn't know how to tie down a hot air balloon?|Want to buy something? $button(1518)Yes or $button(1482)No?) $button(1512)Keep talking or $button(1500)make a unit?
+
+.talk
+art: talk.tci $random(The job isn't very exciting but you get 50 cypherbucks per unit completed! Pays better than any job in the city.|There's not much to spend it on here, but one day we'll make it back to the City and live large.|Try not to look so suspicious - do you want to buy anything? $button(1521)Yes or $button(1482)No?|Word is that even the MEP module expires after so many transports, so new ones have to be brought up to account for the lost.|Some have managed to go back but sometimes their money's all wiped out!) $button(1515)Keep talking or $button(1500)make a unit?
+
+.whatdoyouhaveMEP
+art: talk.tci Let's see. I just got in a graphics card for 1000 cypherbucks. $button(1530)Want it or $button(1512)Not now.
+
+.whatdoyouhave
+art: talk.tci $random(Let's see. I have a one-use MEP module for 1000 cypherbucks for immediate use. $button(1524)Want it or $button(1515)Not now?|Let's see. I just got in a graphics card for 1000 cypherbucks. $button(1527)Want it or $button(1515)Not now?)
+
+.wantit
+art: talk.tci You can't believe your luck.$wset(1035|One Use MEP)$wset(1044|1000) $wget(1533)
+
+.wantit2
+art: talk.tci You can't believe your luck. $wset(1035|bios800graphics)$wset(1044|1000)$wget(1536)
+
+.wantit3
+art: talk.tci You can't believe your luck. $wset(1035|bios800graphics)$wset(1044|1000)$wget(1539)
+
+.marketbuydelta
+$if($wget(1041)|0|$wget(1545)|$wget(1542))
+
+.marketbuydelta2
+$if($wget(1041)|0|$wget(121)|$wget(1542))
+
+.marketbuydelta3
+$if($wget(1041)|0|$wget(124)|$wget(1542))
+
+.purchasefaildelta
+art: talk.tci You only have $wget(376) cypherbucks. Looks like you don't quite have enough cypherbucks - better luck next time! $button(1482)Need to build more units.
+
+.deltasuccess
+While the foreman isn't staring, the other unit pulls you and $wget(1443)$wset(378|$wget(1047)) to a hidden visa transport node that he's cobbled together from factory parts. "It's safe, I've sent others back. Pretty sure they made it cuz I haven't seen them here since." You feel something go into your head.$wset(1035|0)$wset(1044|0) $button($wget(1548))Off you go!
+
+.randomarrival
+$random(1299|384|420|930|1182)

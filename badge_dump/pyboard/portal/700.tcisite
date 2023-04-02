@@ -1,0 +1,29 @@
+
+Intracon Home Page
+$divider(0)
+Welcome $pget(2)!
+
+Browser enables you to surf
+the Con Wide Web
+
+To follow links in browser
+simply rotate the knob until
+the color of the lights match
+the color indicated next to
+the link you want to follow
+then click the knob in and
+off you go!  Clicking on red
+will always bring you to the
+next page of the site you are
+on.
+
+There are over 700 pages to
+explore.  Pages are updated as
+you connect with other badges
+over Network Mode!
+
+$button(701)Con Wide Web
+$button(702)Logogen Custom Logo
+$button(703)Intracon Website Creation
+$button(704)VIP Extras
+$button(705)Tymkrscii Draw Custom Logo

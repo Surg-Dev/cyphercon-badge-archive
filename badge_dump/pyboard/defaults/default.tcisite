@@ -1,0 +1,24 @@
+
+$uget({url}|2)'s $random(Page|Site|Homepage|Home Online|Tree House|Castle|Hideout|Badge Log)$random(|!)
+
+$divider($random(0|1)$random(0|1|2|3|4|5|6|7|8|9))
+Hello$random(| $pget(2)),
+$random(welcome to|kick back and relax at|you found) my site!
+$random(|||||||Under Construction|Caution Construction|Construction Ahead|site under construction)
+$divider($random(0|1)$random(0|1|2|3|4|5|6|7|8|9))
+
+$random(Bio:|About Me:|Who am I?)
+$random(work|job:|title:) $uget({url}|!userclass) at $random(Dip|Blup|Hep|Blar|Nop|Secu|OP) $random(Co|Inc)
+
+$random(Interests:|Fun Facts:|What do I like?)
+I $random(collect|hoard|rescue|repair|photograph) $random(acoustic couplers|terminals|fish heads|cabbage ends|markers|lock picks|tickets|walkie talkies).
+$random(||||||Long walks at Entry Point|Gaming at Good Time|Exploring the psychic mind|Delta Chat|Reading at library mc|Shopping at Market Square)
+
+$divider($random(0|1)$random(0|1|2|3|4|5|6|7|8|9))
+$random(Logs|Entries|Journal|Badge Log|Blog|Diary|Posts)
+$random(Sorry I have not posted more|Sorry there is not much new|Apologies, I have not posted|Apologies, not much here yet!|Opps I have not posted lately|Uhoh there is not much here)
+$random(|Life has been ... more later|Classes are tough so no time|Soo... I need to post more|Found this $button(1295)site today|Have not updated in ages!|I should update this more)
+$random(I can post more after summer|This place is so neat|I finally got a badge site!!!|IS any ONE out THERE????|How does this thing work?|Will anyone see this?|I think it is working now!|Testing?|)
+
+$divider($random(0|1)$random(0|1|2|3|4|5|6|7|8|9))
+intracon webring: $button($random(0|1|2|3|4|5|6)$random(0|1|2|3|4|5|6|7|8|9)$random(0|1|2|3|4|5|6|7|8|9))next site

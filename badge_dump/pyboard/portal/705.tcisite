@@ -1,0 +1,29 @@
+
+Tymkrscii Draw Custom Logo
+$divider(0)
+
+If you have a VIP badge, or
+can find a VIP badge: There
+is a python tool on the SDcard
+which can be used to draw
+custom logos.
+
+save logo as 'custom.tcipage'
+in the root directory of your
+badge using a tool like Thonny
+Then select Uploader from the
+System Menu.  Your new logo
+will be inserted into your
+user file ready for use with
+My Logo Sleep, and will spread
+over the network to other
+badges!
+
+Tymkrscii Draw can also import
+.tci files from trnscdr :)
+
+$button(700)Intracon Home Page
+$button(701)Con Wide Web
+$button(702)Logogen Custom Logo
+$button(703)Intracon Website Creation
+$button(704)VIP Extras

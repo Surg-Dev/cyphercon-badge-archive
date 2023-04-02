@@ -1,0 +1,29 @@
+
+Con Wide Web
+$divider(0)
+Welcome $pget(2)!
+
+When you place your badge into
+Network Mode, it connects with
+nearby badges which are also
+in Network Mode.  The badges
+will automatically exchange
+the most recent versions of
+user files.  In this way, your
+logo, site, and adventurer
+can spread around to other
+badges.  Actions you take on
+your badge effect changes on
+badges over the whole network!
+
+An update may hop through many
+badges before it reaches you.
+Be sure to enable network mode
+often, as you may be carrying
+a fresh update for others!
+
+$button(702)Logogen Custom Logo
+$button(703)Intracon Website Creation
+$button(704)VIP Extras
+$button(705)Tymkrscii Draw Custom Logo
+intracon webring: $button($random(0|1|2|3|4|5|6)$random(0|1|2|3|4|5|6|7|8|9)$random(0|1|2|3|4|5|6|7|8|9))next site
